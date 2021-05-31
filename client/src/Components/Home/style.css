@@ -1,0 +1,80 @@
+.main__home{
+    padding: 10em 0;
+    background-position: 20%;
+    background-image: linear-gradient(rgba(2, 2, 16, 0.515), rgba(3, 21, 44, 0.364)),
+                  url("../../images/digital-world-map-hologram-blue-background.jpg");
+                  min-height: 100vh;
+}
+.home__main__box__1{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.home__h1 h1{
+    color: #F42F54;
+    margin-bottom: 1em;
+}
+img{
+    width: 100%;
+}
+.home__box__2 img{
+    padding: 0em 2em;
+}
+.home__box__1{
+    padding: 0em 2em;
+}
+.home__flow__box{
+    padding: 6em 0em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5em;
+}
+.btn-home{
+    background-color: #F54465;
+    padding: 0.8em 1.5em;
+    border-radius: 20%;
+}
+.home__flow__box hr{
+    color: red;
+    height: 2px;
+    width: auto;
+}
+.home__flow__box p{
+    padding: 1em 0em;
+}
+.flow__boxMe{
+    background-color:#0D1430;
+    min-height: 20vh;
+    padding: 5em 0em;
+}
+.about__investmentt__plan{
+    padding: 5em 0em;
+}
+
+@media screen and (max-width: 768px){
+    .home__main__box__1{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 2em;
+    }
+    .home__box__2 img{
+        padding: 0em 0.5em;
+    }
+    .main__home{
+        padding: 12em 0;
+        background-position: 2%;
+        background-image: linear-gradient(rgba(2, 2, 16, 0.515), rgba(3, 21, 44, 0.364)),
+                      url("../../images/digital-world-map-hologram-blue-background.jpg");
+                      min-height: 100vh;
+    }
+    .home__flow__box{
+        padding: 6em 0em;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 3em;
+    }
+    .flow__boxMe{
+        background-color:#0D1430;
+        min-height: 20vh;
+        padding: 4em 0em;
+    }
+}
