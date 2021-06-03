@@ -72,7 +72,6 @@ class Other__NavBar extends Component {
       
     }
     render() { 
-        console.log(this.state.EthereumApi)
         return ( 
             <div className='other__navMe'>
                   <section className='other__navbar'>

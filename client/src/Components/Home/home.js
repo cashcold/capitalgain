@@ -8,7 +8,16 @@ import{ScrollTrigger} from 'gsap/ScrollTrigger'
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            amountCalculate: ''
+         }
+
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange = input => (event)=>{
+        this.setState({[input]: event.target.value})
+        
     }
 
     componentDidMount(){
@@ -40,7 +49,53 @@ class Home extends Component {
         RegisterHomeTrigger()
     }
     render() { 
+        const CalculatorEngine = ()=>{
+           if( this.state.amountCalculate){
+                if( this.state.amountCalculate < 2000){
+                const Percentage = this.state.amountCalculate * 9.5/100
+               document.querySelector('.totalAmount').innerHTML = "$"+Percentage
+               document.querySelector('.percent_check').innerHTML = "9.5"
+               document.querySelector('.planNowType').innerHTML = "PLAN I"
+                }
+ 
+            }
+           if( this.state.amountCalculate){
+                if( this.state.amountCalculate > 2001){
+                const Percentage = this.state.amountCalculate * 29/100
+               document.querySelector('.totalAmount').innerHTML = "$"+Percentage
+               document.querySelector('.percent_check').innerHTML = "29"
+               document.querySelector('.planNowType').innerHTML = "PLAN II"
+                }
+ 
+            }
+           if( this.state.amountCalculate){
+                if( this.state.amountCalculate > 4001){
+                const Percentage = this.state.amountCalculate * 48/100
+               document.querySelector('.totalAmount').innerHTML = "$"+Percentage
+               document.querySelector('.percent_check').innerHTML = "48"
+               document.querySelector('.planNowType').innerHTML = "PLAN III"
+                }
+ 
+            }
+           if( this.state.amountCalculate){
+                if( this.state.amountCalculate > 6001){
+                const Percentage = this.state.amountCalculate * 29/100
+               document.querySelector('.totalAmount').innerHTML = "$"+Percentage
+               document.querySelector('.percent_check').innerHTML = "68"
+               document.querySelector('.planNowType').innerHTML = "PLAN IIII"
+                }
+ 
+            }
+              
+        }
+                
+            //    document.querySelector('.toatlProfit').style.cssText = "font-size: 30px"
+            //    document.querySelector('.toatalAllMoney').innerHTML ="$"+OverAllProfit + " TOATAL PROFIT RECEIVED   "
+            //    document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 30px " 
+        CalculatorEngine()
+        console.log(this.state.amountCalculate)
         return ( 
+            
             <div className='main__home'>
                 <section className='home__main__box__1'>
                         <div className="home__box__1">
@@ -75,30 +130,132 @@ class Home extends Component {
                 </section>
                 <section className='about__investmentt__plan  '>
                     <div className="header__text">
-                        <h1>OUR <span>INVESTMENT</span> PLANS</h1>
+                        <h2>OUR <span>INVESTMENT</span> PLANS</h2>
                     </div>
                     <div className="investmentt__plan">
                          <section className='pricingNow'>
-                   <div className='title '>Choose Your Plan</div>
                    <div className='container container__2'>
-                       <div className="box box__1">
-                           <h1>15%</h1>
-                           <h2 className='popular__1'>BEGINNER</h2>
-                           <div className="price">PLAN: DAILY 24HRS</div>
-                          <div className="all__plan">
-                              <div className="plan__me">
-                                    <i class="fas fa-handshake fa-3x"></i>
-                                    <div className="text__content">MINIMUM - 5.00 USD</div>
-                                    <hr/>
-                                    <div className="text__content">MINIMUM - 99.00 USD</div>
+                       <div className="box_box__1">
+                           <h1>PLAN I</h1>
+                           <div className="innerPlan innerPlanother">
+                               <h1 className='percentRate'>9.5</h1>
+                               <h3>%</h3>
+                           </div>
+                           <h3 className='planType'>DAILY FOREVER</h3>
+                           <div className="typeAmount_box_1">
+                              <div className="innerTypeAmount">
+                                  <p>Min: </p>
+                                  <p className='typeAmountSpan'>$10</p>
                               </div>
-                          </div>
-                           
-                           <div className="bothInner">
-                                <a href='/calculate'  target='_blank' className='btn btn-warning'>Calculate</a>
-                               </div>
+                               <span className='spanMainType'></span>
+                              <div className="innerTypeAmount innerTypeAmount2">
+                                  <p>Max: </p>
+                                  <p className='typeAmountSpan'>$2000</p>
+                              </div>
+                               <span className='spanMainType'></span>
+                              <div className="innerTypeAmount innerTypeAmount2">
+                                  <p>Withdraw:</p>
+                                  <p className='typeAmountSpan'>INSTANT</p>
+                              </div>
+                           </div>
+                       </div>
+                       <div className="box_box__1">
+                           <h1>PLAN II</h1>
+                           <div className="innerPlan innerPlanother">
+                               <h1 className='percentRate'>29</h1>
+                               <h3>%</h3>
+                           </div>
+                           <h3 className='planType'>3 DAYS</h3>
+                           <div className="typeAmount_box_1">
+                              <div className="innerTypeAmount">
+                                  <p>Min: </p>
+                                  <p className='typeAmountSpan'>$2001</p>
+                              </div>
+                               <span className='spanMainType'></span>
+                              <div className="innerTypeAmount innerTypeAmount2">
+                                  <p>Max: </p>
+                                  <p className='typeAmountSpan'>$4000</p>
+                              </div>
+                               <span className='spanMainType'></span>
+                              <div className="innerTypeAmount innerTypeAmount2">
+                                  <p>Withdraw:</p>
+                                  <p className='typeAmountSpan'>INSTANT</p>
+                              </div>
+                           </div>
+                       </div>
+                       <div className="box_box__1">
+                           <h1>PLAN III</h1>
+                           <div className="innerPlan innerPlanother">
+                               <h1 className='percentRate'>48</h1>
+                               <h3>%</h3>
+                           </div>
+                           <h3 className='planType'>5 DAYS</h3>
+                           <div className="typeAmount_box_1">
+                              <div className="innerTypeAmount">
+                                  <p>Min: </p>
+                                  <p className='typeAmountSpan'>$4001</p>
+                              </div>
+                               <span className='spanMainType'></span>
+                              <div className="innerTypeAmount innerTypeAmount2">
+                                  <p>Max: </p>
+                                  <p className='typeAmountSpan'>$600</p>
+                              </div>
+                               <span className='spanMainType'></span>
+                              <div className="innerTypeAmount innerTypeAmount2">
+                                  <p>Withdraw:</p>
+                                  <p className='typeAmountSpan'>INSTANT</p>
+                              </div>
+                           </div>
+                       </div>
+                       <div className="box_box__1">
+                           <h1>PLAN IV</h1>
+                           <div className="innerPlan innerPlanother">
+                               <h1 className='percentRate'>68</h1>
+                               <h3>%</h3>
+                           </div>
+                           <h3 className='planType'>7 DAYS</h3>
+                           <div className="typeAmount_box_1">
+                              <div className="innerTypeAmount">
+                                  <p>Min: </p>
+                                  <p className='typeAmountSpan'>$6001</p>
+                              </div>
+                               <span className='spanMainType'></span>
+                              <div className="innerTypeAmount innerTypeAmount2">
+                                  <p>Max: </p>
+                                  <p className='typeAmountSpan'>$8000</p>
+                              </div>
+                               <span className='spanMainType'></span>
+                              <div className="innerTypeAmount innerTypeAmount2">
+                                  <p>Withdraw:</p>
+                                  <p className='typeAmountSpan'>INSTANT</p>
+                              </div>
+                           </div>
                        </div>
                    </div>
+                 </section>
+                 <section className='calculateMe'>
+                     <div className="calcualteNow__box_1">
+                        <img src={require('../../images/b72895618be95619a15bd4a0befdf826.png')}/>
+                     </div>
+                     <div className="calcualteNow__box_2">
+                         <h2>CALCULATE <br/><span className='profit'>PROFIT</span></h2>
+                     </div>
+                     <div className="calcualteNow__box_3">
+                         <p><span>Enter Amount</span></p>
+                         <input name='amountCalculate' onChange={this.handleChange('amountCalculate')} className='calculateInput'/>
+                     </div>
+                     <div className="calcualteNow__box_4">
+                         <p><span>PLAN</span></p>
+                         <p className='planNowType'></p>
+                     </div>
+                     <div className="calcualteNow__box_5">
+                         <p><span>DAILY EARNING</span></p>
+                         <p className='totalAmount'>$0</p>
+                     </div>
+                     <div className="calcualteNow__box_6">
+                         <p><span>DAILY PROFIT</span></p>
+                         <p className='percent_check'>%</p>
+                     </div>
                  </section>
                     </div>
                 </section>
