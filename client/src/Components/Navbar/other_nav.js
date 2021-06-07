@@ -78,7 +78,7 @@ class Other__NavBar extends Component {
                     <div className="other__navFlow">
                         <section className='other_bar_flow'>
                             <div className="other__nav_chat__1">
-                            <p><i class="far fa-clock fa-2x"></i> {this.state.currentDateTime}</p>
+                            <p><i class="far fa-clock fa-2x"></i>{this.state.currentDateTime}</p>
                             </div>
                             <div className="other__nav_chat__2">
                                 <p><i class="fab fa-telegram-plane fa-2x"> </i> Telegram Chat</p>

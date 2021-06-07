@@ -139,6 +139,11 @@ img{
     color: white;
     border-radius: 5%;
 }
+.header__text span{
+    color: red; 
+}
+
+
 
 @media screen and (max-width: 768px){
     .home__main__box__1{
