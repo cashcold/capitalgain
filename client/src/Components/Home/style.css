@@ -142,6 +142,96 @@ img{
 .header__text span{
     color: red; 
 }
+.about__us__main span{
+    color: #B9244C;
+}
+.about__us__main{
+    margin-top: 2em;
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+    
+    
+}
+.about__box_1 a{
+    border: 1px solid red;
+    padding: 1em 3em;
+}
+.about__box_1{
+    margin: 0 auto;
+}
+.about__box_1 p{
+    line-height: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 1.3em;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+.about__box_1{
+    border: 1px solid #63A5FF;
+    padding: 4em 2.5em;
+}
+.flow__boxMe{
+    border: 1px solid #63A5FF;
+}
+.advanteage{
+    padding: 7em 0em;
+}
+.advanteage span{
+    color: #B9244C;
+}
+.advant__box__1{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2em;
+    padding: 4em 0;
+}
+.advan__box{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+   
+}
+.advan__box{
+    padding: 2em 1em;
+    background-color: #0D1430;
+}
+.advan__box i{
+    padding-right: 1em;
+}
+.Advanteage__inner__box__2 h3 {
+    padding-bottom: 1em;
+    border-bottom: 1px solid red;
+    
+}
+.Advanteage__inner__box__2 p{
+    padding: 1em 0;
+}
+.refferText p{
+    padding-bottom: 1em;
+}
+.reffer__me__now{
+    border: 1px solid #63A5FF;
+    padding: 2em 3em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+    width: 100%;
+    background-color: #0D1430;
+}
+.reffer__main{
+    padding: 0 3em;
+}
+.reffer__main span{
+    color: #B9244C;
+}
+.reff__box h1{
+    padding-bottom: 1em;
+}
+.refferText p{
+    font-weight: bold;
+
+}
 
 
 
@@ -203,5 +293,52 @@ img{
     padding: 0.5em 0.5em;
     border-top-right-radius: 30%;
     border-bottom-left-radius: 30%;
-}
+    }
+    .about__us__main{
+        margin-top: 2em;
+         display: grid;
+         grid-template-columns: repeat(1,1fr);
+         padding: 0em 0.5em;
+        
+        
+    }
+    .about__box_1 p{
+        line-height: 2rem;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 1em;
+        font-weight: bolder;
+        font-size: 1.1rem;
+    }
+    .about__box_1 a{
+        border: 1px solid red;
+        padding: 1em 2em;
+    }
+    .about__box_1{
+        border: 1px solid #63A5FF;
+        padding: 2em 1.5em;
+    }
+    .advant__box__1{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 2em;
+    padding: 2em 0.8em;
+    }
+    .advan__box{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+       
+    }
+    .reffer__me__now{
+        border: 1px solid #63A5FF;
+        padding: 2em 3em;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 5em;
+        
+    }
+    .reffer__main{
+        padding: 0 0.8em;
+    }
 }

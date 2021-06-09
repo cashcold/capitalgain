@@ -101,7 +101,7 @@ class Home extends Component {
                         <div className="home__box__1">
                             <div className='home__h1'>
                                 <h1 className='home__box__h1'>Capital Gain Management Co.</h1>
-                                <h3 className='home__box__h3'>Earn up to 12% Daily, Easily with 3 STEPS</h3>
+                                <h3 className='home__box__h3'>Earn up to 9.5% Daily, Easily with 3 STEPS</h3>
                             </div>
                          <div className="home__flow__box">
                             <div className="flow__box__1 flow__boxMe flowAnimate">
@@ -257,6 +257,89 @@ class Home extends Component {
                          <p className='percent_check'>%</p>
                      </div>
                  </section>
+                    </div>
+                </section>
+                <section className='about__us__main'>
+                    <div className="about__box_1">
+                        <h1>ABOUT <span>OUR COMPANY</span></h1>
+                        <p>Capital Gain Management Co. is at heart a bitcoin investment company. However, we are opportunistic and are looking at other cryptocurrency resource opportunities that present a favorable upside.</p>
+                        <p>The Company is well financed and management has a wealth of experience in all aspects of mineral exploration and development. Capital Gain Management Co. is also a place to invest and earn profits with stable percent.</p>
+                        <a href='' classname='btn btn__read_more'>READ MORE</a>
+                    </div>
+                    <div className="about__box_2">
+                        <img src={require('../../images/bitcoin-3396302.jpg')} />
+                    </div>
+                </section>
+                <section className='advanteage'>
+                    <h1>OUR <span>ADVANTEAGE</span></h1>
+                    <div className="advant__box__1">
+                        <div className="advanteage__box__1 advan__box">
+                            <div className="Advanteage__inner__box__1">
+                            <i class="fas fa-registered fa-4x" ></i>
+                            </div>
+                            <div className="Advanteage__inner__box__2">
+                                <h3>REAL REGISTERED COMPANY</h3>
+                                <p>Our company is legally registered in the United Kingdom with the proper authority.</p>
+                            </div>
+                        </div>
+                        <div className="advanteage__box__1 advan__box">
+                            <div className="Advanteage__inner__box__1">
+                            <i class="fas fa-shield-alt fa-4x"></i>
+                            </div>
+                            <div className="Advanteage__inner__box__2">
+                                <h3>DDOS PROTECTION</h3>
+                                <p>Our company install DDoS Protection to mitigate all types of DDoS attacks.</p>
+                            </div>
+                        </div>
+                        <div className="advanteage__box__1 advan__box">
+                            <div className="Advanteage__inner__box__1">
+                            <i class="fas fa-hand-holding-usd fa-4x"></i>
+                            </div>
+                            <div className="Advanteage__inner__box__2">
+                                <h3>FAST AND SECURE WITHDRAWALS</h3>
+                                <p>Withdrawal requests process instantlyy without any delay. You can make as many requests as you want everyday.</p>
+                            </div>
+                        </div>
+                        <div className="advanteage__box__1 advan__box">
+                            <div className="Advanteage__inner__box__1">
+                            <i class="fas fa-users fa-4x"></i>
+                            </div>
+                            <div className="Advanteage__inner__box__2">
+                                <h3>EXPERIENCED MANAGEMENT TEAM</h3>
+                                <p>Our company is legally registered in the United Kingdom with the proper authority.</p>
+                            </div>
+                        </div>
+                        <div className="advanteage__box__1 advan__box">
+                            <div className="Advanteage__inner__box__1">
+                            <i class="fas fa-key fa-4x"></i>
+                            </div>
+                            <div className="Advanteage__inner__box__2">
+                                <h3>DOMAIN REGISTRATIONY</h3>
+                                <p>Our domain is registered for four (4) years with domain name lock to prevent malicious and hacker activities.</p>
+                            </div>
+                        </div>
+                        <div className="advanteage__box__1 advan__box">
+                            <div className="Advanteage__inner__box__1">
+                            <i class="fas fa-phone fa-4x"></i>
+                            </div>
+                            <div className="Advanteage__inner__box__2">
+                                <h3>24/7 CUSTOMER SUPPORT</h3>
+                                <p>Taking care of our customers is important at axcellus.cc. So we've made 24/7 online support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='reffer__main'>
+                    <div className="reffer__me__now">
+                        <i class="fas fa-people-arrows fa-8x"></i>
+                        <div className="reff__box">
+                            <h1><span>5%</span></h1>
+                            <h4>REFERRAL COMMISSIO</h4>
+                        </div>
+                        <div className="refferText">
+                            <p>You've got the opportunity to invite your friends, family, or other groups to enjoy our Invest plans and benefit from our lucrative affiliate program.</p>
+                            <p>For each Invest of plans, one of your referrals makes, you'll gain an instant 5% commission. This alone can help you build a constant cash-flow.</p>
+                        </div>
                     </div>
                 </section>
             </div>
