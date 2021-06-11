@@ -62,8 +62,8 @@ class Navbar extends Component {
                        <div className='nav__links animate__animated animate__slower animate__bounceInDown'>
                            <ul className='links'>
                                <li><a href='/' style={{color: "red"}}>HOME </a></li>
-                               <li><a href='/affiliate'>AFFILIATE</a></li>
-                               <li><a href='/FQA'>FAQS</a></li>
+                               <li><a href='/about-us'>ABOUT US</a></li>
+                               <li><a href='/faqs'>FAQS</a></li>
                                <li><a href='/contact-us'>SUPPORT</a></li>
                                 <a href='/login' className='btn btn-login-in'>Login</a> 
                                 <a href='/register' className='btn btn-join-us'>Register</a> 
