@@ -112,10 +112,10 @@ class RegisterUser extends Component {
         return ( 
             <div className='register'>
              <ToastContainer/>
-                <h1  className=''>CREATE AN ACCOUNT</h1> 
+                <h1  className='registerH1'>CREATE AN ACCOUNT</h1> 
                 <div className="allRegister">
                     <div className='registerNow'>
-                        <h1>PERSONAL INFORMATION</h1>
+                        <h1>PERSONAL <span>INFORMATION</span></h1>
                         <div className='formMain'>
                             <form>
                                 <table>
@@ -143,12 +143,12 @@ class RegisterUser extends Component {
                        
                     </div>
                     <div className="otherRegisterInfo">
-                        <h1>SECURITY INFORMATION</h1>
+                        <h1>SECURITY <span>INFORMATION</span></h1>
                         <div className='formMain'>
                             <form>
                                 <table>
                                     <tr><td><label>Define Password:</label></td>
-                                        <td><input  className='' type='text' name='user_Name'  onChange={this.handleChange('password')}/></td>
+                                        <td><input   className='' type='password' name='password'  placeholder='confirm password' onChange={this.handleChange('password')}/></td>
                                     </tr>
                                     <tr><td><label>Retype Password:</label></td>
                                         <td><input  className='' type='password' name='password'  placeholder='confirm password' onChange={this.handleChange('password')}/></td>
@@ -157,7 +157,7 @@ class RegisterUser extends Component {
                                         <td><input  className='' type='text' name='qustion'  placeholder='email' onChange={this.handleChange('email')}/></td>
                                     </tr>
                                     <tr><td><label>Secret Answer:</label></td>
-                                        <td><input  className='' type='text' name='qustion'   onChange={this.handleChange('email')}/></td>
+                                        <td><input  className='' type='text' name='qustion'   /></td>
                                     </tr>
                                 </table>
                             </form>
@@ -172,7 +172,7 @@ class RegisterUser extends Component {
                         <div className='upfontLine2'>
                             <div className='upfont'>
                                 <p><input type='radio' name='checkbox' onChange={this.handleChange('checkBox')}/> I agree with Terms and conditions</p>
-                                <a href='' className='btn btn-warning' onClick={this.onSubmit}>REGISTER</a>
+                                <a href='' className='btn btn-danger' onClick={this.onSubmit}>REGISTER</a>
                             </div>
                         </div>
                     </div>
