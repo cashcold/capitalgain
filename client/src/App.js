@@ -10,6 +10,7 @@ import AboutMain from './Components/About-us/about';
 import FAQSMAIN from './Components/FAQ/faq';
 import ContactMain from './Components/Contact-us/contact_us';
 import RegisterUser from './Components/Register/register';
+import Dashboard from './Components/Dashboard/dashboard';
 
 class MainApp extends Component {
     constructor(props) {
@@ -27,14 +28,13 @@ class MainApp extends Component {
                         <Other__NavBar/>
                         <Navbar/>
                         <div className='router'>
-                            
                            <Switch>
                               <Route path='/' exact component={Home}/> 
                               <Route path='/about-us' exact component={AboutMain}/> 
                               <Route path='/faqs' exact component={FAQSMAIN}/> 
                               <Route path='/contact-us' exact component={ContactMain}/> 
-                              <Route path='/register' exact component={RegisterUser
-                            }/> 
+                              <Route path='/register' exact component={RegisterUser}/> 
+                              <Route path='/dashboard' exact component={Dashboard}/> 
                            </Switch>
                         </div>
                        <FooterMain/>

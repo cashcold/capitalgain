@@ -118,7 +118,7 @@ class RegisterUser extends Component {
                         <h1>PERSONAL <span>INFORMATION</span></h1>
                         <div className='formMain'>
                             <form>
-                                <table>
+                                <table className='formTable'>
                                     <tr>
                                         <td><label>Your Full Name:</label></td>
                                         <td><input  className='' type='text' name='full_Name' onChange={this.handleChange('full_Name')}/></td>
@@ -127,13 +127,16 @@ class RegisterUser extends Component {
                                          <td><label>Your Username:</label></td>
                                         <td><input  className='' type='text' name='user_Name'  onChange={this.handleChange('user_Name')}/></td>
                                     </tr>
-                                    <tr><td><label>Your Email Address:</label></td>
+                                    <tr>
+                                        <td><label>Your Email Address:</label></td>
                                         <td><input  className='' type='email' name='email'   onChange={this.handleChange('email')}/></td>
                                     </tr>
-                                    <tr><td><label>Retype Email Address:</label></td>
+                                    <tr>
+                                        <td><label>Retype Email Address: </label></td>
                                         <td><input  className='' name='email'  onChange={this.handleChange('bitcoin')}/></td>
                                     </tr>
-                                       <tr><td><label>Your Bitcoin Account:</label></td>
+                                       <tr>
+                                           <td><label>Your Bitcoin Account:</label></td>
                                         <td><input  className='' name='bitcoin'  onChange={this.handleChange('bitcoin')}/></td>
                                     </tr>
                                 
@@ -147,16 +150,20 @@ class RegisterUser extends Component {
                         <div className='formMain'>
                             <form>
                                 <table>
-                                    <tr><td><label>Define Password:</label></td>
+                                    <tr>
+                                        <td><label>Define Password:</label></td>
                                         <td><input   className='' type='password' name='password'  placeholder='confirm password' onChange={this.handleChange('password')}/></td>
                                     </tr>
-                                    <tr><td><label>Retype Password:</label></td>
+                                    <tr>
+                                        <td><label>Retype Password:</label></td>
                                         <td><input  className='' type='password' name='password'  placeholder='confirm password' onChange={this.handleChange('password')}/></td>
                                     </tr>
-                                    <tr><td><label>Secret Question:</label></td>
+                                    <tr>
+                                        <td><label>Secret Question:</label></td>
                                         <td><input  className='' type='text' name='qustion'  placeholder='email' onChange={this.handleChange('email')}/></td>
                                     </tr>
-                                    <tr><td><label>Secret Answer:</label></td>
+                                    <tr>
+                                        <td><label>Secret Answer:</label></td>
                                         <td><input  className='' type='text' name='qustion'   /></td>
                                     </tr>
                                 </table>

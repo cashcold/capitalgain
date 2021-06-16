@@ -1,0 +1,121 @@
+.dashboard__main{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 8em 0;
+    background-position: 20%;
+    background-image: linear-gradient(rgba(2, 2, 16, 0.515), rgba(3, 21, 44, 0.364)),
+                  url("../../images/digital-world-map-hologram-blue-background.jpg");
+                  min-height: 100vh;
+}
+.dashboard__section_box__1{
+    padding: 4em 0;
+    width: 90%;
+    margin:  0 auto;
+    background-color:#0D1430;
+}
+.dashboard__main span{
+    color: #B9244C;
+}
+.dashboard__section_box__2{
+    background-color:#0D1430;
+    min-height: 20vh;
+    width: 90%;
+    margin:  0 auto;
+}
+.dashboard__section_box__2 ul{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    color: #B9244C;
+    
+}
+.dashboard__section_box__2 ul a{
+    color: #B9244C;
+    padding: 1.5em 2.5em ;
+    background-color:#030716;
+    
+}
+.dashboard__section_box__1 h1{
+    padding-bottom: 2em;
+}
+
+.dashboard__section_box__3{
+    background-color:#0D1430;
+    min-height: 100vh;
+    width: 90%;
+    margin:  0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+    padding: 0em 1em;
+}
+.dash__box__1{
+    background-color:#080f2b; 
+    width: 100%;
+    height: 30vh;
+}
+.dash__box__1{
+    padding: 5em 1em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1em;
+}
+.dash__box__1 h2{
+    border: 1px solid white;
+    padding-top: 1em;
+    font-size: 1.5rem;
+    background-color: #B9244C;;
+    color: white;
+    
+}
+
+
+@media screen and (max-width: 768px){
+    .dashboard__section_box__2 ul{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 5em;
+        color: #B9244C;
+        
+    }
+    .dashboard__section_box__2{
+        background-color:#0D1430;
+        min-height: 100vh;
+        width: 98%;
+        margin:  0 auto;
+    }
+    .dashboard__section_box__1{
+        padding: 4em 0;
+        width: 98%;
+        margin:  0 auto;
+        background-color:#0D1430;
+    }
+    .dashboard__section_box__2 ul a{
+        color: #B9244C;
+        padding: 1.5em 8em ;
+        background-color:#030716;
+        
+    }
+    .dashboard__section_box__3{
+        background-color:#0D1430;
+        min-height: 100vh;
+        width: 100%;
+        margin:  0 auto;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 1em;
+        padding: 4em 0em;
+        grid-gap: 0em;
+    }
+    .dash__box__1{
+        background-color:#080f2b; 
+        width: 100%;
+        height: 30vh;
+    }
+    .dashboard__section_box__2 ul a{
+        color: #B9244C;
+        padding: 1.5em 5em ;
+        background-color:#030716;
+        
+    }
+}

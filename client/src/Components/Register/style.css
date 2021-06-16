@@ -41,6 +41,16 @@ input:focus{
 .registerNow h1,.otherRegisterInfo h1{
     padding-bottom: 1em;
 }
+.formMain label{
+    padding-right: 1.5em;
+}
+
+.upFontLine{
+    padding: 2em 0;
+}
+
+
+
 
 @media screen and (max-width: 768px){
     
