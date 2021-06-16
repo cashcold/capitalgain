@@ -41,7 +41,7 @@
 
 .dashboard__section_box__3{
     background-color:#0D1430;
-    min-height: 100vh;
+    min-height: 50vh;
     width: 90%;
     margin:  0 auto;
     display: grid;
@@ -68,6 +68,45 @@
     color: white;
     
 }
+.welcomeText{
+    padding: 5em 5.2em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+}
+.welcomeText h3{
+    padding: 1.3em 0em;
+    background-color:#030716;
+    color: red;
+}
+.about__all{
+    padding: 5em 0em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 3em;
+    background-color:#0D1430;
+    width: 92%;
+    margin:  0 auto;
+    min-height: 70vh;
+}
+.all__box{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+    padding: 0 3em;
+}
+.all__about_-box__1 h3{
+    padding-bottom: 3em;
+    color: #B9244C;
+}
+.all__box p{
+    padding-bottom: 1em;
+    padding: 1em 0em;
+    background-color: #B9244C;
+}
+
+
+
 
 
 @media screen and (max-width: 768px){
@@ -98,7 +137,7 @@
     }
     .dashboard__section_box__3{
         background-color:#0D1430;
-        min-height: 100vh;
+        min-height: 30vh;
         width: 100%;
         margin:  0 auto;
         display: grid;
@@ -118,4 +157,28 @@
         background-color:#030716;
         
     }
+    .welcomeText{
+        padding: 5em 1.2em;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 3em;
+    }
+    .about__all{
+        padding: 5em 0em;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 3em;
+        background-color:#0D1430;
+        width: 98%;
+        margin:  0 auto;
+        min-height: 70vh;
+    }
+    .all__box{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 0em;
+        padding: 0 0em;
+    }
+   
+   
 }

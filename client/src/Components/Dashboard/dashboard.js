@@ -41,7 +41,44 @@ class Dashboard extends Component {
                         <h2 className='btn'>WITHDRAW</h2>
                     </div>
                 </section>
-
+                <section className='welcome__user'>
+                    <div className="welcomeText">
+                        <h3>Welcome Cashcold99!</h3>
+                        <h3>Last Account Access : Jun-15-2021 08:37:12 PM</h3>
+                    </div>
+                </section>
+                <section className='about__all'>
+                    <div className="all__about_-box__1">
+                        <h3>DEPOSIT HISTORY</h3>
+                        <div className="all__box">
+                            <p>Active Deposit :</p>
+                            <p>$0.00</p>
+                        </div>
+                        <div className="all__box">
+                            <p>Total Deposit :</p>
+                            <p>$0.00</p>
+                        </div>
+                        <div className="all__box">
+                            <p>Last Deposit :</p>
+                            <p>$0.00</p>
+                        </div>
+                    </div>
+                    <div className="all__about_-box__1">
+                        <h3>WITHDRAW HISTORY</h3>
+                        <div className="all__box">
+                            <p>Pending Withdraw :</p>
+                            <p>$0.00</p>
+                        </div>
+                        <div className="all__box">
+                            <p>Total Withdraw :</p>
+                            <p>$0.00</p>
+                        </div>
+                        <div className="all__box">
+                            <p>Last Withdraw :</p>
+                            <p>$0.00</p>
+                        </div>
+                    </div>
+                </section>
             </div>
          );
     }
