@@ -92,7 +92,7 @@
 .all__box{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-gap: 1em;
+    grid-gap: 0em;
     padding: 0 3em;
 }
 .all__about_-box__1 h3{
@@ -104,7 +104,29 @@
     padding: 1em 0em;
     background-color: #B9244C;
 }
-
+.refferNow{
+    padding: 5em 0em;
+     display: grid;
+    grid-template-areas: 
+    'reff__box_1 reff__box_2 reff__box_2';
+    background-color:#0D1430;
+}
+.reff__box_2{
+    grid-area: reff__box_2;
+}
+.reff__box_1{
+    grid-area: reff__box_1;
+}
+.reffLink{
+    width: 80%;
+    margin: 0 auto;
+    min-height: 20px;
+    padding: 1em 0em;
+    background-color: #B9244C;
+}
+.reff__box_2 h2{
+    padding-bottom: 1.5em;
+}
 
 
 
@@ -178,6 +200,22 @@
         grid-template-columns: repeat(2,1fr);
         grid-gap: 0em;
         padding: 0 0em;
+    }
+    .refferNow{
+        padding: 3em 0em;
+         display: grid;
+        grid-template-areas: 
+        'reff__box_1 reff__box_1 '
+        'reff__box_2 reff__box_2';
+        background-color:#0D1430;
+        grid-gap: 1em;
+    }
+    .reffLink{
+        width: 98%;
+        margin: 0 auto;
+        min-height: 20px;
+        padding: 1em 0em;
+        background-color: #B9244C;
     }
    
    

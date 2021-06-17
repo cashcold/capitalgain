@@ -79,6 +79,17 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </section>
+                <section className='reffer__link'>
+                    <div className="refferNow">
+                        <div className="reff__box_1">
+                             <i class="fas fa-users fa-10x"></i>
+                        </div>
+                        <div className="reff__box_2">
+                            <h2>Personal <span>Referral</span> Link:</h2>
+                           <p className='reffLink'>https://capitalgain/?ref=cashcold99</p>
+                        </div>
+                    </div>
+                </section>
             </div>
          );
     }
