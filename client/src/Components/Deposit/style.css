@@ -12,3 +12,53 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
+.deposit__box__1{
+    min-height: 20vh;
+    background-color:#0D1430;
+    width: 90%;
+    margin: 0 auto;
+    padding: 3em 0em;
+}
+.depositInfo__lay__1{
+    margin-bottom: 1.5em;
+}
+.depositInfo__box__1{
+    margin-bottom: 1.5em;
+}
+.newDeposit{
+    padding-bottom: 2em;
+}
+.depositMain span{
+    color: #B9244C;
+}
+.depositInfo__lay__1 h3{
+    padding: 0.5em 0em;
+       background-color:red;
+}
+.allSection{
+    display: grid;
+    grid-gap: 3em;
+}
+
+@media screen and (max-width: 768px){
+    .deposit__box__1{
+        min-height: 20vh;
+        background-color:#0D1430;
+        width: 98%;
+        margin: 0 auto;
+        padding: 1.5em 0em;
+    }
+    .depositInfo__lay__1{
+        margin-bottom: 1em;
+    }
+    .depositInfo__box__1{
+        margin-bottom: 1em;
+    }
+    .newDeposit{
+        padding-bottom: 2em;
+    }
+    .allSection{
+        display: grid;
+        grid-gap: 2em;
+    }
+}
