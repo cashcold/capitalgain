@@ -16,18 +16,14 @@
 }
 .foot__box1 h1{
     margin-bottom: 1em;
-    background-color: blue;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    background-image: linear-gradient(to bottom, #d4e20a 0%, #ff1010 100%);;
+  
 }
 .foot__box2 h1,.foot__box3 h1{
     margin-bottom: 1em;
 }
-.quick__lick a,.foot__box3 p{
-    color:  #F8941D;
+
+.footer__main h1{
+    color: #B9244C;
 }
 
 @media screen and (max-width: 768px){

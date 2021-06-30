@@ -27,12 +27,12 @@ class FooterMain extends Component {
                         </div>
                         <div className="foot__box3">
                             <h1>CONTACTS:</h1>
-                            <p><i class="fas fa-envelope-square"></i>SUPPORT@CapitalGainManagement.COM</p>
-                            <p><i class="fas fa-map-marker-alt"></i>58 Union Terrace, LONDON, UNITED KINGDOM, E15 6NY</p>
+                            <p><i class="fas fa-envelope-square"></i>Support<br/>@CapitalGainManagement.COM</p>
+                            <p><i class="fas fa-map-marker-alt"></i>58 Union Terrace,<br/> LONDON, UNITED KINGDOM, E15 6NY</p>
                         </div>
                         
                         <div className="foot__box1">
-                             <h1>Capital Gain Management Co.</h1>
+                             <h1>Capital Gain<br/> Management Co.</h1>
                             <p>COPYRIGHT 2021. Capital Gain Management Co.</p>
                         </div>
                     </div>

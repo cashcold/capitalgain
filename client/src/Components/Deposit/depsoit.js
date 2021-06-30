@@ -3,7 +3,9 @@ import './style.css'
 class DepositMain extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            amountDeposit: 20
+         }
     }
     render() { 
         return ( 
@@ -142,6 +144,24 @@ class DepositMain extends Component {
                                         </div>
                                     </div>
                              </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='other__deposit__info'>
+                    <div className="other_deposit_box_1">
+                        <div className="other__inner_box">
+                            <h5>Your account balance ($):</h5>
+                            <h5 className='innerH5'>$0.00</h5>
+                        </div>
+                        <div className="other__inner_box_2">
+                            <h5>Amount to Spend ($):</h5>
+                            <h5 className='innerH5'><input placeholder='e.g $20'/></h5>
+                        </div>
+                        <div className="bit__btn">
+                             <h5> <input type='radio' name='planNow'   className='planBtn4'/> Bitcoin</h5>
+                        </div>
+                        <div className="bit__btn ">
+                             <h5 className='bit__btn_2'><a href=''>SPEND</a></h5>
                         </div>
                     </div>
                 </section>
