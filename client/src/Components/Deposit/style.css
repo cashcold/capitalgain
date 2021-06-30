@@ -111,4 +111,34 @@
         display: grid;
         grid-gap: 2em;
     }
+    .other__inner_box{
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-gap: 3em;
+}
+.other__inner_box_2{
+    padding: 2.5em 0em;
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-gap: 3em;
+}
+.other_deposit_box_1{
+    min-height: 40vh;
+    background-color:#0D1430;
+    width: 98%;
+    margin: 0 auto;
+    padding: 1em 0em;
+}
+.bit__btn_2{
+    padding: 0.8em 0em;
+    background-color: red;
+    width: 80%;
+    margin: 0 auto;
+}
+.bit__btn{
+    padding: 1.5em 0em;
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-gap: 3em;
+}
 }

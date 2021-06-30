@@ -158,7 +158,7 @@ class DepositMain extends Component {
                             <h5 className='innerH5'><input placeholder='e.g $20'/></h5>
                         </div>
                         <div className="bit__btn">
-                             <h5> <input type='radio' name='planNow'   className='planBtn4'/> Bitcoin</h5>
+                             <h5> <input type='radio' name='planNow'   className='planBtn4'/><span> Bitcoin</span></h5>
                         </div>
                         <div className="bit__btn ">
                              <h5 className='bit__btn_2'><a href=''>SPEND</a></h5>
