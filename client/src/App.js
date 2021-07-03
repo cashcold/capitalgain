@@ -13,6 +13,7 @@ import RegisterUser from './Components/Register/register';
 import Dashboard from './Components/Dashboard/dashboard';
 import Login from './Components/Login/login';
 import DepositMain from './Components/Deposit/depsoit';
+import EditMain from './Components/Edit/edit';
 
 class MainApp extends Component {
     constructor(props) {
@@ -39,6 +40,7 @@ class MainApp extends Component {
                               <Route path='/register' exact component={RegisterUser}/> 
                               <Route path='/dashboard' exact component={Dashboard}/> 
                               <Route path='/deposit' exact component={DepositMain}/> 
+                              <Route path='/edit' exact component={EditMain}/> 
                            </Switch>
                         </div>
                        <FooterMain/>
