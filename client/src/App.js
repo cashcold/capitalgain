@@ -14,6 +14,7 @@ import Dashboard from './Components/Dashboard/dashboard';
 import Login from './Components/Login/login';
 import DepositMain from './Components/Deposit/depsoit';
 import EditMain from './Components/Edit/edit';
+import WithdrawMain from './Components/Withdraw/withdraw';
 
 class MainApp extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class MainApp extends Component {
                               <Route path='/dashboard' exact component={Dashboard}/> 
                               <Route path='/deposit' exact component={DepositMain}/> 
                               <Route path='/edit' exact component={EditMain}/> 
+                              <Route path='/withdraw' exact component={WithdrawMain}/> 
                            </Switch>
                         </div>
                        <FooterMain/>
