@@ -8,10 +8,59 @@ class WithdrawMain extends Component {
     render() { 
         return ( 
             <div className='withdraw__main'>
-                <h1>WITHDRAW FUND</h1>
-                <section className='withdraw__box__1'>
-                    <div className="with__inner__box_1"></div>
-                </section>
+                <h1 className='widthraw__h1'>WITHDRAW FUND</h1>
+                <div className="All__flow__withdraw">
+                    <section className='withdraw__box__1'>
+                      <div className="flow__text">
+                            <div className="with__inner__box_1">
+                                <h4 className='style__h4'>Account Balance:</h4>
+                            </div>
+                            <div className="with__inner__box_1">
+                                <h4>$0.00</h4>
+                            </div>
+                            <div className="with__inner__box_1">
+                                <h4 className='style__h4'>Pending Withdrawals:</h4>
+                            </div>
+                            <div className="with__inner__box_1">
+                                <h4>$</h4>
+                            </div>
+                      </div>
+                    </section>
+                    <section className='widthdraw__info'>
+                        <div className="width__process__1">
+                            <h4>Processing</h4>
+                        </div>
+                        <div className="width__process__1">
+                            <h4>Available</h4>
+                        </div>
+                        <div className="width__process__1">
+                            <h4>Pending</h4>
+                        </div>
+                    </section>
+                    <section className='width__method'>
+                        <div className="method__box">
+                            <h4><i class="fab fa-bitcoin"></i>Bitcoin</h4>
+                        </div>
+                        <div className="method__box">
+                            <h4 className='btn btn-success'>$0.00</h4>
+                        </div>
+                        <div className="method__box">
+                            <h4  className='btn btn-danger'>$0.00</h4>
+                        </div>
+                        {/* <div className="method__box">
+                            <h4  className='btn btn-primary'>14VoBZY3Pap6NUeTxNttspyGHBx92d1wAh</h4>
+                        </div> */}
+                    </section>
+                    <section className='wallet'>
+                        <div className="wallet__id">
+                            <h4>wallet address</h4>
+                        </div>
+                        <div className="wallet__id">
+                            <h4>14VoBZY3Pap6NUeTxNttspyGHBx92d1wAh</h4>
+                        </div>
+                    </section>
+                </div>
+              
             </div>
          );
     }
