@@ -51,10 +51,26 @@
 }
 .wallet{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 0em;
     padding: 2em 0em;
+    padding-right: 1em;
 }
+.blink_me {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  .textInfo{
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 1em;
+       padding-bottom: 3em;
+  }
 
 @media screen and (max-width: 768px){
     .widthraw__h1{
@@ -70,4 +86,5 @@
         min-height: 40vh;
         background-color:#0D1430;
     }
+   
 }

@@ -9,6 +9,9 @@ class WithdrawMain extends Component {
         return ( 
             <div className='withdraw__main'>
                 <h1 className='widthraw__h1'>WITHDRAW FUND</h1>
+                <div className="textInfo blink_me alert alert-danger  " role="alert" >
+                            <h5>You have no funds to withdraw.</h5>
+                </div>
                 <div className="All__flow__withdraw">
                     <section className='withdraw__box__1'>
                       <div className="flow__text">
@@ -22,7 +25,7 @@ class WithdrawMain extends Component {
                                 <h4 className='style__h4'>Pending Withdrawals:</h4>
                             </div>
                             <div className="with__inner__box_1">
-                                <h4>$</h4>
+                                <h4>$0.00</h4>
                             </div>
                       </div>
                     </section>
@@ -52,13 +55,18 @@ class WithdrawMain extends Component {
                         </div> */}
                     </section>
                     <section className='wallet'>
+                        <div className="iconWallet">
+                        <i class="fas fa-wallet fa-3x"></i>
+                        </div>
                         <div className="wallet__id">
                             <h4>wallet address</h4>
                         </div>
                         <div className="wallet__id">
                             <h4>14VoBZY3Pap6NUeTxNttspyGHBx92d1wAh</h4>
                         </div>
+                       
                     </section>
+                  
                 </div>
               
             </div>
