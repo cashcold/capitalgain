@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route, useParams ,useRouteMatch} from 'react-router-dom'
 import AccountRouter from '../InnerRouter/accountRouter/accountRouter';
 import Account from '../InnerRouter/accountRouter/accountRouter'
-import EditMainRouter from '../InnerRouter/editRouter/edit';
+import EditMainRouter from '../Edit/edit';
+import WithdrawMain from '../Withdraw/withdraw';
 import './style.css'
 class Dashboard extends Component {
     constructor(props) {
@@ -28,16 +29,17 @@ class Dashboard extends Component {
                         <li ><a href='/dashboard/account_dash' >ACCOUNT</a></li>
                         <li><a href=''>DEPOSIT</a></li>
                         <li><a href=''>DEPOSIT LIST</a></li>
-                        <li><a href=''>WITHDRAW</a></li>
+                        <li><a href='/dashboard/withdraw'>WITHDRAW</a></li>
                         <li><a href=''>TRANSACTION</a></li>
-                        <li><a href={`/dashboard/edit_dash`}>EDIT</a></li>
+                        <li><a href={`/dashboard/edit`}>EDIT</a></li>
                         <li><a href=''>SECURITY</a></li>
                         <li><a href=''>SIGN-OUT</a></li>
                     </ul>
                 </section>
-                <Switch>
-                        <Route path='/dashboard/edit_dash'  exact  component={EditMainRouter}/> 
+                <Switch>    
+                        <Route path='/dashboard/edit'  exact  component={EditMainRouter}/> 
                         <Route path='/dashboard/account_dash'  exact component={AccountRouter}/> 
+                        <Route path='/dashboard/withdraw'  exact component={WithdrawMain}/> 
                 </Switch>
             </div>
          );

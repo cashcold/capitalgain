@@ -52,14 +52,8 @@ class MainApp extends Component {
                               <Route path='/deposit' exact component={DepositMain}/> 
                               <Route path='/edit' exact component={EditMain}/> 
                               <Route path='/withdraw' exact component={WithdrawMain}/>
-                              {/* inner__dashboard__router start */}
-                              {/* <Route path='/edit_dash' exact component={EditMainRouter}/> 
-                              <Route path='/account_dash' exact component={AccountRouter}/>  */}
-                               {/* inner__dashboard__router end */}
-                               <Switch>
-                               <Route path='/dashboard' render={(props)=> <Dashboard {...props} />} />
-                               </Switch>
-                           </Switch>
+                              <Route path='/dashboard' render={(props)=> <Dashboard {...props} />} />
+                          </Switch>
                         </div>
                        <FooterMain/>
                     </div>
