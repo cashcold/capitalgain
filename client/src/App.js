@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, useParams, useRouteMatch} from 'react-router-dom'
 import Navbar from './Components/Navbar/navbar';
 import './App.css'
 import Other__NavBar from './Components/Navbar/other_nav';
@@ -15,15 +15,25 @@ import Login from './Components/Login/login';
 import DepositMain from './Components/Deposit/depsoit';
 import EditMain from './Components/Edit/edit';
 import WithdrawMain from './Components/Withdraw/withdraw';
+import EditMainRouter from './Components/InnerRouter/editRouter/edit';
+import AccountRouter from './Components/InnerRouter/accountRouter/accountRouter';
 
 class MainApp extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-
+            url: ''
          }
     }
+    componentDidMount(){
+        const url = window.location.pathname;
+        this.setState({
+            url
+        })
+       
+    }
     render() { 
+        console.log(this.state.url)
         return ( 
             <Router>
                 <div className='mainApp animate__animated animate__zoomIn animate__slowerss'>
@@ -39,10 +49,16 @@ class MainApp extends Component {
                               <Route path='/contact-us' exact component={ContactMain}/> 
                               <Route path='/login' exact component={Login}/> 
                               <Route path='/register' exact component={RegisterUser}/> 
-                              <Route path='/dashboard' exact component={Dashboard}/> 
                               <Route path='/deposit' exact component={DepositMain}/> 
                               <Route path='/edit' exact component={EditMain}/> 
-                              <Route path='/withdraw' exact component={WithdrawMain}/> 
+                              <Route path='/withdraw' exact component={WithdrawMain}/>
+                              {/* inner__dashboard__router start */}
+                              {/* <Route path='/edit_dash' exact component={EditMainRouter}/> 
+                              <Route path='/account_dash' exact component={AccountRouter}/>  */}
+                               {/* inner__dashboard__router end */}
+                               <Switch>
+                               <Route path='/dashboard' render={(props)=> <Dashboard {...props} />} />
+                               </Switch>
                            </Switch>
                         </div>
                        <FooterMain/>

@@ -10,7 +10,7 @@ class WithdrawMain extends Component {
             <div className='withdraw__main'>
                 <h1 className='widthraw__h1'>WITHDRAW FUND</h1>
                 <div className="textInfo blink_me alert alert-danger  " role="alert" >
-                            <h5>You have no funds to withdraw.</h5>
+                     <h5>You have no funds to withdraw.</h5>
                 </div>
                 <div className="All__flow__withdraw">
                     <section className='withdraw__box__1'>
@@ -50,9 +50,6 @@ class WithdrawMain extends Component {
                         <div className="method__box">
                             <h4  className='btn btn-danger'>$0.00</h4>
                         </div>
-                        {/* <div className="method__box">
-                            <h4  className='btn btn-primary'>14VoBZY3Pap6NUeTxNttspyGHBx92d1wAh</h4>
-                        </div> */}
                     </section>
                     <section className='wallet'>
                         <div className="iconWallet">
