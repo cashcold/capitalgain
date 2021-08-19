@@ -5,6 +5,7 @@ import Account from '../InnerRouter/accountRouter/accountRouter'
 import EditMainRouter from '../Edit/edit';
 import WithdrawMain from '../Withdraw/withdraw';
 import './style.css'
+import TotalTransaction from '../Transacttion/transaction';
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +27,7 @@ class Dashboard extends Component {
                 </section>
                 <section className='dashboard__section_box__2'>
                     <ul>
-                        <li ><a href='/dashboard/account_dash' >ACCOUNT</a></li>
+                        <li ><a href='/dashboard/account' >ACCOUNT</a></li>
                         <li><a href=''>DEPOSIT</a></li>
                         <li><a href=''>DEPOSIT LIST</a></li>
                         <li><a href='/dashboard/withdraw'>WITHDRAW</a></li>
@@ -38,8 +39,9 @@ class Dashboard extends Component {
                 </section>
                 <Switch>    
                         <Route path='/dashboard/edit'  exact  component={EditMainRouter}/> 
-                        <Route path='/dashboard/account_dash'  exact component={AccountRouter}/> 
+                        <Route path='/dashboard/account'  exact component={AccountRouter}/> 
                         <Route path='/dashboard/withdraw'  exact component={WithdrawMain}/> 
+                        <Route path='/dashboard/transaction/total_transaction'  exact component={TotalTransaction}/> 
                 </Switch>
             </div>
          );

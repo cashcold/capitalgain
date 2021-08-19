@@ -17,6 +17,7 @@ import EditMain from './Components/Edit/edit';
 import WithdrawMain from './Components/Withdraw/withdraw';
 import EditMainRouter from './Components/InnerRouter/editRouter/edit';
 import AccountRouter from './Components/InnerRouter/accountRouter/accountRouter';
+import TotalTransaction from './Components/Transacttion/transaction';
 
 class MainApp extends Component {
     constructor(props) {
@@ -53,6 +54,8 @@ class MainApp extends Component {
                               <Route path='/edit' exact component={EditMain}/> 
                               <Route path='/withdraw' exact component={WithdrawMain}/>
                               <Route path='/dashboard' render={(props)=> <Dashboard {...props} />} />
+                              {/* <Route path='/dashboard/' component={TotalTransaction} /> */}
+                              {/* <Route path='/dashboard/:total_transaction' render={(props)=> <TotalTransaction {...props} />} /> */}
                           </Switch>
                         </div>
                        <FooterMain/>
