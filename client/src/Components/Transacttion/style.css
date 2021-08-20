@@ -36,7 +36,7 @@
     margin: 2em 0em;
 }
 .all_transaction_chat{
-    padding: 4em 0em;
+    padding: 4em 3em;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 1em;
@@ -73,4 +73,16 @@
         grid-gap: 2em;
         margin-right: 0em;
     }
+    .last__transac{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+    padding: 0em 2em;
+}
+.all_transaction_chat{
+    padding: 4em 1em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1em;
+}
 }

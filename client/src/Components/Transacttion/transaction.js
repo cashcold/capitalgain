@@ -59,7 +59,7 @@ class TotalTransaction extends Component {
                 </section>
               <section className='total__transac__box__1'>
                   <div className="totalTransaction__box_1">
-                    <DropdownButton  id="dropdown-basic-button" title="SELECT TRANSACTION OPTION">
+                    <DropdownButton  id="dropdown-basic-button" title="SELECT TRANSACTION ">
                         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
