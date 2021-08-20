@@ -35,3 +35,42 @@
     height: 5vh;
     margin: 2em 0em;
 }
+.all_transaction_chat{
+    padding: 4em 0em;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1em;
+}
+.all_transaction_chat h4 {
+    padding: 1em 0em ;
+    background-color: white;
+}
+.last__transac{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+    padding: 0em 6em;
+}
+.transac_left{
+    text-align: left;
+}
+.transac_right{
+    text-align: right;
+}
+@media screen and (max-width: 768px){
+    .total_transaction{
+        width: 98%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        padding: 4em 0;
+        background-color: #0D1430;
+        margin-top: 3em;
+    }
+    .total__transac__box__1{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 2em;
+        margin-right: 0em;
+    }
+}

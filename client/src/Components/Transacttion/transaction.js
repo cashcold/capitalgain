@@ -59,7 +59,7 @@ class TotalTransaction extends Component {
                 </section>
               <section className='total__transac__box__1'>
                   <div className="totalTransaction__box_1">
-                    <DropdownButton style={{width: "150%"}} id="dropdown-basic-button" title="SELECT TRANSACTION OPTION">
+                    <DropdownButton  id="dropdown-basic-button" title="SELECT TRANSACTION OPTION">
                         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
@@ -79,6 +79,18 @@ class TotalTransaction extends Component {
                       </div>
                       <h4 className='btn btn-warning' onClick={this.onSubmit}>Search</h4>
                      </div>
+                   </section>
+                   <section className='total__transaction__flow'>
+                      <div className="all_transaction_chat">
+                          <div className="total_tra__box_1"><h4><span>Type</span></h4></div>
+                          <div className="total_tra__box_1"><h4><span>Amount</span></h4></div>
+                      <div className="total_tra__box_1"><h4><span>Date</span></h4></div>
+                    </div>
+                    <p>No transactions found</p>
+                      <div className="last__transac">
+                          <p className="transac_left">Total:</p>
+                          <p className="transac_right">$ 0.00</p>
+                      </div>
                    </section>
             </div>
          );

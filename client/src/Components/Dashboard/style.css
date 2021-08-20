@@ -127,7 +127,9 @@
 .reff__box_2 h2{
     padding-bottom: 1.5em;
 }
-
+.dashboard_bot_drop{
+    display: none;
+}
 
 
 
@@ -217,6 +219,11 @@
         padding: 1em 0em;
         background-color: #B9244C;
     }
-   
+   .dashboard__section_box__2{
+       display: none;
+   }
+   .dashboard_bot_drop{
+    display: block;
+}
    
 }
