@@ -9,6 +9,8 @@ import WithdrawMain from '../Withdraw/withdraw';
 import './style.css'
 import TotalTransaction from '../Transacttion/transaction';
 import DepositMain from '../Deposit/depsoit';
+import WithdrawalTransaction from '../Transacttion/withdrawalTransaction';
+import DepositTransaction from '../Transacttion/depositTransaction';
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -44,7 +46,7 @@ class Dashboard extends Component {
                         <li ><a href='/dashboard/account' >ACCOUNT</a></li>
                         <li><a href='/dashboard/deposit'>DEPOSIT</a></li>
                         <li><a href=''>DEPOSIT LIST</a></li>
-                        <li><a href='/dashboard/withdraw'>WITHDRAW</a></li>
+                        <li><a href='/dashboard/transaction/total_withdrawal'>WITHDRAW</a></li>
                         <li><a href='/dashboard/transaction/total_transaction'>TRANSACTION</a></li>
                         <li><a href={`/dashboard/edit`}>EDIT</a></li>
                         <li><a href=''>SECURITY</a></li>
@@ -57,7 +59,9 @@ class Dashboard extends Component {
                         <Route path='/dashboard/account'  exact component={AccountRouter}/> 
                         <Route path='/dashboard/withdraw'  exact component={WithdrawMain}/> 
                         <Route path='/dashboard/deposit'  exact component={DepositMain}/> 
-                        <Route path='/dashboard/transaction/total_transaction'  exact component={TotalTransaction}/> 
+                        <Route path='/dashboard/transaction/total_transaction'  exact component={TotalTransaction}/>
+                        <Route path='/dashboard/transaction/total_withdrawal'  exact component={WithdrawalTransaction}/>
+                        <Route path='/dashboard/transaction/total_deposit'  exact component={DepositTransaction}/>
                 </Switch>
             </div>
          );

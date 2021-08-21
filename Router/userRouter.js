@@ -342,10 +342,7 @@ res.send(RefreshToken)
          startDate: req.body.startDate,
          endDate: req.body.endDate
      })
-    //  const fromDate = req.body.fromDate
-    //  const endDate = req.body.endDate
-    //  console.log(fromDate)
-    //  console.log(endDate)
+
 
     res.send("Total Transaction")
     console.log(saveTotalTransaction)

@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import axios from 'axios'
 
-class TotalTransaction extends Component {
+class DepositTransaction extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -55,7 +55,7 @@ class TotalTransaction extends Component {
             <div className='total_transaction'>
               <ToastContainer/>
                 <section className='total__box__1'>
-                    <h1><span>TOTAL</span> TRANSACTION <span>HISTORY</span></h1>
+                    <h1><span>TOTAL</span> DEPOSIT <span>HISTORY</span></h1>
                 </section>
               <section className='total__transac__box__1'>
                   <div className="totalTransaction__box_1">
@@ -97,4 +97,4 @@ class TotalTransaction extends Component {
     }
 }
  
-export default TotalTransaction;
+export default DepositTransaction;
