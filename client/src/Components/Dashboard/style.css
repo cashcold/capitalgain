@@ -25,7 +25,7 @@
 }
 .dashboard__section_box__2 ul{
     display: grid;
-    grid-template-columns: repeat(8,1fr);
+    grid-template-columns: repeat(6,1fr);
     color: #B9244C;
     
 }

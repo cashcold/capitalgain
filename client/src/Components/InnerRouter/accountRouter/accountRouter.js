@@ -12,7 +12,7 @@ class AccountRouter extends Component {
                     <div className="dash__box__1">
                         <i class="fas fa-coins fa-5x"></i>
                         <div className="dashText">
-                            <h5>TOTAL INVESTMENT</h5>
+                            <h5>ACTIVTE DEPOSIT</h5>
                             <h5> $ 0.00</h5>
                         </div>
                         <h2 className='btn'>INVEST</h2>

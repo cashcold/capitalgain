@@ -63,8 +63,7 @@ class DepositTransaction extends Component {
                         <Dropdown.Item href="/dashboard/transaction/total_transaction">Total Transaction</Dropdown.Item>
                         <Dropdown.Item href="/dashboard/transaction/total_deposit">Deposit</Dropdown.Item>
                         <Dropdown.Item href="/dashboard/transaction/total_withdrawal">Withdrawal</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        <Dropdown.Item href="/dashboard/transaction/total_earning">Earning</Dropdown.Item>
                     </DropdownButton>
                   </div>
                   <div className="totalTransaction__box_1">

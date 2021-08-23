@@ -11,6 +11,7 @@ import TotalTransaction from '../Transacttion/transaction';
 import DepositMain from '../Deposit/depsoit';
 import WithdrawalTransaction from '../Transacttion/withdrawalTransaction';
 import DepositTransaction from '../Transacttion/depositTransaction';
+import EarningTransaction from '../Transacttion/earningTransaction';
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -33,11 +34,9 @@ class Dashboard extends Component {
                      <DropdownButton className='dashboard_bot_drop' id="dropdown-item-button" title="MY DASHBOARD">
                         <Dropdown.Item  href='/dashboard/account'>ACCOUNT</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/deposit'>DEPOSIT</Dropdown.Item>
-                        <Dropdown.Item  href='/'>DEPOSIT LIST</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/withdraw'>WITHDRAW</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/transaction/total_transaction'>TRANSACTION</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/edit'>EDIT</Dropdown.Item>
-                        <Dropdown.Item  href='/'>SECURITY</Dropdown.Item>
                         <Dropdown.Item  href=''>SIGN-OUT</Dropdown.Item>
                     </DropdownButton>
                 </section>
@@ -45,14 +44,13 @@ class Dashboard extends Component {
                     <ul className='dashboard_a'>
                         <li ><a href='/dashboard/account' >ACCOUNT</a></li>
                         <li><a href='/dashboard/deposit'>DEPOSIT</a></li>
-                        <li><a href=''>DEPOSIT LIST</a></li>
                         <li><a href='/dashboard/transaction/total_withdrawal'>WITHDRAW</a></li>
                         <li><a href='/dashboard/transaction/total_transaction'>TRANSACTION</a></li>
                         <li><a href={`/dashboard/edit`}>EDIT</a></li>
-                        <li><a href=''>SECURITY</a></li>
                         <li><a href=''>SIGN-OUT</a></li>
                     </ul> 
                 </section>
+                <section>
                 <Switch>    
                         <Route path='/dashboard/edit'  exact  component={EditMainRouter}/> 
                         <Route path='/dashboard'  exact component={AccountRouter}/> 
@@ -62,6 +60,7 @@ class Dashboard extends Component {
                         <Route path='/dashboard/transaction/total_transaction'  exact component={TotalTransaction}/>
                         <Route path='/dashboard/transaction/total_withdrawal'  exact component={WithdrawalTransaction}/>
                         <Route path='/dashboard/transaction/total_deposit'  exact component={DepositTransaction}/>
+                        <Route path='/dashboard/transaction/total_earning'  exact component={EarningTransaction}/>
                 </Switch>
             </div>
          );
