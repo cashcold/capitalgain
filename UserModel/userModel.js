@@ -21,18 +21,12 @@ const userSchema = new mongoose.Schema({
     bitcoin: {
         type: String,
     },
-    bitcoinCash: {
-        type: String,
-    },
-    ethereum: {
-        type: String,
-    },
     ip_address:{
         type: String,
         require: true
     },
     accountBalance: {
-        type: String,
+        type: Number,
     },
     reffer:{
         type: String
@@ -41,7 +35,7 @@ const userSchema = new mongoose.Schema({
         type: String,
     },
     activetDeposit: {
-        
+        type: Number,
     },
     date: {
         

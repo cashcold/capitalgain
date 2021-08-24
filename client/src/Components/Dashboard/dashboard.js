@@ -50,7 +50,6 @@ class Dashboard extends Component {
                         <li><a href=''>SIGN-OUT</a></li>
                     </ul> 
                 </section>
-                <section>
                 <Switch>    
                         <Route path='/dashboard/edit'  exact  component={EditMainRouter}/> 
                         <Route path='/dashboard'  exact component={AccountRouter}/> 

@@ -33,8 +33,6 @@ Router.post('/register/', async(req,res)=>{
         password: hashPassword,
         email: req.body.email,
         bitcoin: req.body.bitcoin,
-        bitcoinCash: req.body.bitcoinCash,
-        ethereum: req.body.ethereum,
         ip_address: req.body.ip_address,
         accountBalance: req.body.accountBalance,
         reffer: req.body.reffer,
@@ -345,7 +343,7 @@ res.send(RefreshToken)
 
 
     res.send("Total Transaction")
-    console.log(saveTotalTransaction)
+    console.log(saveTotalTransaction) 
  })
 
 

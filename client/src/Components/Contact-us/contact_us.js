@@ -9,9 +9,7 @@ class ContactMain extends Component {
         return ( 
             <div className='mainContact'>
                 <section className='contactNow'>
-                 
-                <iframe src="https://player.castr.com/live_685afb10043a11ec997ec5d85c3a38d0" width="590" height="431" frameborder="0" scrolling="no" allow="autoplay" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>   
-                <h1><span>CONTACT WITH US</span></h1>
+                    <h1><span>CONTACT WITH US</span></h1>
                 <div className='bothAll'>
                              <div className='bothSupportB'>
                             <div className='supportLine'>
