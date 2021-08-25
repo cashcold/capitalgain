@@ -49,6 +49,9 @@ input:focus{
     padding: 2em 0;
 }
 
+input{
+    color: white;
+}
 
 
 

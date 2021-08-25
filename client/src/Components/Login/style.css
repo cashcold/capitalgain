@@ -23,22 +23,22 @@ input:focus{
     color: white;
 }
 .formMain_login{
-    margin-left: 35em;
+    width: 32%;
+    margin: 0 auto;
 }
 .login__box__login h1{
-    padding-bottom: 1em;
+    padding-bottom: 2em;
 }
 .formTable_login label{
     padding-right: 1em;
 }
 .a_Links{
     display: flex;
-    padding: 2em 15em;
+    padding: 2em 4em;
 }
 .a_Links a{
    padding: 1em 2em;
-   
-   margin-right: 2em;
+ margin-right: 2em;
 }
 .login__box__login{
     padding: 8em 0;
@@ -48,8 +48,27 @@ input:focus{
 .loginMain span{
     color: #B9244C;
 }
+.formTable_login tr{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+.password_icon_1,.password_icon_2{
+    color: black;
+    padding: 1em 0.2em;
+    background-color: #0D1430;
+    cursor: pointer;
+}
+.formTable_login{
+    position: relative;
+}
 
+.password__flow{
+    display: flex;
+}
 
+.password_icon_1{
+    display: none;
+}
 
 @media screen and (max-width: 768px){
     .formMain_login{
@@ -77,6 +96,14 @@ input:focus{
      }
      .formTable_login label{
         padding-right: 0.4em;
+    }
+    .formMain_login{
+    width: 68%;
+    margin: 0 auto;
+    }
+    .formTable_login tr{
+        display: grid;
+        grid-template-columns: repeat(1,2fr);
     }
 
 }

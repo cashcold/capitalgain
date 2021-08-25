@@ -16,7 +16,7 @@ class Navbar extends Component {
         }
       
 
-
+ 
         const ToggleBtn = ()=>{
             const toggleBtn = document.querySelector('.toggle__bar')
             const links = document.querySelector('.nav__links')

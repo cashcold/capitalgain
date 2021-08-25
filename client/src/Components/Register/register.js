@@ -12,14 +12,14 @@ class RegisterUser extends Component {
             full_Name: '',
             user_Name: '',
             password: '',
-            password2: '',
+            confirm_password: '',
             email: '',
             bitcoin: '',
-            bitcoinCash: '',
-            ethereum: '',
             ip_address: '',
             accountBalance: '',
             activetDeposit: '',
+            question: '',
+            question__ans: '',
             reffer: '',
             restartLinkPassword: '',
             checkBox: '',
@@ -58,15 +58,16 @@ class RegisterUser extends Component {
             full_Name: this.state.full_Name,
             user_Name: this.state.user_Name,
             password: this.state.password,
+            comfirm_password: this.state.comfirm_password,
             email: this.state.email,
             bitcoin: this.state.bitcoin,
-            bitcoinCash: this.state.bitcoinCash,
-            ethereum: this.state.ethereum,
             ip_address: this.state.ip_address,
             accountBalance: this.state.accountBalance,
              activetDeposit: this.state.activetDeposit,
             reffer: this.state.reffer,
             restartLinkPassword: this.state.restartLinkPassword,
+            question: this.state.question,
+            question__ans: this.state.question__ans,
             checkBox: this.state.checkBox,
             date: this.state.date
             
@@ -78,11 +79,15 @@ class RegisterUser extends Component {
             return false
         }
         if(SaveNewUser.user_Name.length < 5){
-            toast.warn('User Name is must be at lest 5')
+            toast.warn('User Name must be at lest 5')
             return false
         }
         if(SaveNewUser.password.length < 6){
-            toast.warn('password is must be at lest 6')
+            toast.warn('password must be at lest 6')
+            return false
+        }
+        if(SaveNewUser.password !== SaveNewUser.comfirm_password){
+            toast.warn('password do not match')
             return false
         }
 
@@ -100,7 +105,7 @@ class RegisterUser extends Component {
             return false
         }
 
-        // http://localhost:3000
+        console.log(SaveNewUser)
         event.preventDefault()
         axios.post("/users/register/",SaveNewUser).then(res => {toast.success("Register Successful")}).then(res => setTimeout(()=>{
             window.location="/login"
@@ -109,6 +114,7 @@ class RegisterUser extends Component {
     
     }
     render() { 
+        console.log(this.state.reffer)
         return ( 
             <div className='register'>
              <ToastContainer/>
@@ -133,7 +139,7 @@ class RegisterUser extends Component {
                                     </tr>
                                     <tr>
                                         <td><label>Retype Email Address: </label></td>
-                                        <td><input  className='' name='email'  onChange={this.handleChange('bitcoin')}/></td>
+                                        <td><input  className='' name='email'  onChange={this.handleChange('email')}/></td>
                                     </tr>
                                        <tr>
                                            <td><label>Your Bitcoin Account:</label></td>
@@ -152,19 +158,19 @@ class RegisterUser extends Component {
                                 <table>
                                     <tr>
                                         <td><label>Define Password:</label></td>
-                                        <td><input   className='' type='password' name='password'  placeholder='confirm password' onChange={this.handleChange('password')}/></td>
+                                        <td><input   className='' type='password' name='password'  placeholder='password' onChange={this.handleChange('password')}/></td>
                                     </tr>
                                     <tr>
                                         <td><label>Retype Password:</label></td>
-                                        <td><input  className='' type='password' name='password'  placeholder='confirm password' onChange={this.handleChange('password')}/></td>
+                                        <td><input  className='' type='password' name='confirm_password'  placeholder='confirm password' onChange={this.handleChange('comfirm_password')}/></td>
                                     </tr>
                                     <tr>
                                         <td><label>Secret Question:</label></td>
-                                        <td><input  className='' type='text' name='qustion'  placeholder='email' onChange={this.handleChange('email')}/></td>
+                                        <td><input  className='' type='text' name='question'   onChange={this.handleChange('question')}/></td>
                                     </tr>
                                     <tr>
                                         <td><label>Secret Answer:</label></td>
-                                        <td><input  className='' type='text' name='qustion'   /></td>
+                                        <td><input  className='' type='text' name='question__ans' onChange={this.handleChange('question__ans')}  /></td>
                                     </tr>
                                 </table>
                             </form>

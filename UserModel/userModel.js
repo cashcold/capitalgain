@@ -34,6 +34,12 @@ const userSchema = new mongoose.Schema({
     restartLinkPassword:{
         type: String,
     },
+    question:{
+        type: String,
+    },
+    question__ans:{
+        type: String,
+    },
     activetDeposit: {
         type: Number,
     },

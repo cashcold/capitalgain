@@ -27,14 +27,10 @@ class MainApp extends Component {
          }
     }
     componentDidMount(){
-        const url = window.location.pathname;
-        this.setState({
-            url
-        })
+      
        
     }
     render() { 
-        console.log(this.state.url)
         return ( 
             <Router>
                 <div className='mainApp animate__animated animate__zoomIn animate__slowerss'>

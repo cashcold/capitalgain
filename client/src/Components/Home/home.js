@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import './style.css'
-import {TimelineLite} from 'gsap'
-import {gsap} from 'gsap'
-import{ScrollTrigger} from 'gsap/ScrollTrigger'
 
 
 class Home extends Component {
@@ -21,32 +18,12 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        const RegisterHomeTrigger = ()=>{
-            gsap.registerPlugin(ScrollTrigger)
 
-            const home__main__box__1 = document.querySelector('.home__main__box__1')
-            const home__box__h1 = document.querySelector('.home__box__h1')
-            const home__box__h3 = document.querySelector('.home__box__h3')
-            const flowAnimate = document.querySelectorAll('.flowAnimate')
-            const home__box__2_image = document.querySelector('.home__box__2_image')
-
-            const home__mainTl =  new TimelineLite({
-                scrollTrigger: {
-                    trigger:  home__main__box__1,
-                    start: "0px 80%",
-                    scrub: false,
-                    toggleActions: "restart none none none",
-                }
-            })  
-            
-            home__mainTl.from(home__box__h1,{opacity: 0, duration: 1, ease: "slow(0.1, 0.1, false)", x:'-800',y: '8000' })
-            home__mainTl.from(home__box__h3,{opacity: 0, duration: 1, ease: "slow(0.4, 0.7, false)", x:'-800', })
-            home__mainTl.from(flowAnimate,{opacity: 0, duration: 1, ease: "slow(0.4, 0.7, false)", x:'800',  stagger: 0.5})
-            home__mainTl.from(home__box__2_image,{opacity: 0, duration: 1, ease: "slow(0.4, 0.7, false)", x:'-800'})
-
-        }
-
-        RegisterHomeTrigger()
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        for(var pair of urlSearchParams.entries()) {
+            sessionStorage.setItem('reffer',(pair[0]+''+pair[1]) ) 
+         }
+       
     }
     render() { 
         const CalculatorEngine = ()=>{

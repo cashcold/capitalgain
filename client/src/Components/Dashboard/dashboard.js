@@ -25,6 +25,11 @@ class Dashboard extends Component {
         //     url
         // })
     }
+    LogoutNow = ()=>{
+        sessionStorage.removeItem('x-access-token');
+        sessionStorage.clear(); 
+        window.locaton='/'
+    }
     render() { 
         return ( 
             <div className='dashboard__main'>
@@ -37,14 +42,14 @@ class Dashboard extends Component {
                         <Dropdown.Item  href='/dashboard/withdraw'>WITHDRAW</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/transaction/total_transaction'>TRANSACTION</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/edit'>EDIT</Dropdown.Item>
-                        <Dropdown.Item  href=''>SIGN-OUT</Dropdown.Item>
+                        <Dropdown.Item  href=''  onClick={this.LogoutNow}>SIGN-OUT</Dropdown.Item>
                     </DropdownButton>
                 </section>
                 <section className='dashboard__section_box__2'>
                     <ul className='dashboard_a'>
                         <li ><a href='/dashboard/account' >ACCOUNT</a></li>
                         <li><a href='/dashboard/deposit'>DEPOSIT</a></li>
-                        <li><a href='/dashboard/transaction/total_withdrawal'>WITHDRAW</a></li>
+                        <li><a href='/dashboard/withdraw'>WITHDRAW</a></li>
                         <li><a href='/dashboard/transaction/total_transaction'>TRANSACTION</a></li>
                         <li><a href={`/dashboard/edit`}>EDIT</a></li>
                         <li><a href=''>SIGN-OUT</a></li>

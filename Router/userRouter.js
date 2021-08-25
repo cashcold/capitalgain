@@ -3,6 +3,7 @@ const Total_TransactionModel = require('../UserModel/total_transactionModel')
 const UserDeposit = require('../UserModel/depositModel')
 const WithdrawDeposit = require('../UserModel/widthdraw')
 const bcrypt = require('bcryptjs')
+const User = require('../UserModel/userModel')
 const mailgun = require('mailgun-js')
 const dotEnv = require('dotenv')
 const jwt = require('jsonwebtoken')
@@ -34,9 +35,11 @@ Router.post('/register/', async(req,res)=>{
         email: req.body.email,
         bitcoin: req.body.bitcoin,
         ip_address: req.body.ip_address,
-        accountBalance: req.body.accountBalance,
+        accountBalance: Number(req.body.accountBalance),
         reffer: req.body.reffer,
-        activetDeposit: req.body.activetDeposit,
+        question: req.body.question,
+        question__ans: req.body.question__ans,
+        activetDeposit: Number(req.body.activetDeposit),
         date: req.body.date
     })
 
@@ -51,7 +54,7 @@ Router.post('/register/', async(req,res)=>{
         console.log(body);
     });
   
-
+    console.log(saveUser)
     await saveUser.save()
     res.send("user save")
 
@@ -60,14 +63,14 @@ Router.post('/register/', async(req,res)=>{
 
 
 Router.post('/login', async(req,res)=>{
-    const user = await User.findOne({email: req.body.email})
+    const user = await User.findOne({user_Name: req.body.user_Name})
     if(!user) {
 
-        return res.status(400).send('Email Do Not Exist')
+        return res.status(400).send(`User ${req.body.user_Name} Do Not Exist`)
     } 
 
     await bcrypt.compare(req.body.password, user.password,(err,isMatch)=>{
-        if(!isMatch) return res.status(400).send('Invalid Password ')
+        if(!isMatch) return res.status(400).send('Wrong Password Enter ')
         else{
             const payload = {
                  user_id: user._id,
@@ -76,12 +79,12 @@ Router.post('/login', async(req,res)=>{
                  email: user.email,
                  password: user.password,
                  bitcoin: user.bitcoin,
-                 bitcoinCash: user.bitcoinCash,
-                 ethereum: user.ethereum,
                  ip_address: user.ip_address,           
                  date: user.Date,
                  accountBalance: user.accountBalance,
                  activetDeposit: user.activetDeposit,
+                question: user.question,
+                question__ans: user.question__ans,
                  date: user.date
             }
             const token = jwt.sign(payload, process.env.TokenSecret)
