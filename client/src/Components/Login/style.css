@@ -58,9 +58,7 @@ input:focus{
     background-color: #0D1430;
     cursor: pointer;
 }
-.formTable_login{
-    position: relative;
-}
+
 
 .password__flow{
     display: flex;
@@ -69,6 +67,17 @@ input:focus{
 .password_icon_1{
     display: none;
 }
+
+
+.formTable_login{
+    text-align: start;
+     
+ }
+
+
+
+
+
 
 @media screen and (max-width: 768px){
     .formMain_login{
@@ -104,6 +113,14 @@ input:focus{
     .formTable_login tr{
         display: grid;
         grid-template-columns: repeat(1,2fr);
+       padding-left: 1em;
     }
+    /* .LoginInput input{
+    margin-left: -2em;    
+} */
+.formTable_login{
+   text-align: start;
+    
+}
 
 }

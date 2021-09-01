@@ -8,8 +8,12 @@
 .home__main__box__1{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    padding: 0em 2em;
 }
 .home__h1 h1{
+
+
+    
     color: #F42F54;
     margin-bottom: 1em;
 }
@@ -149,6 +153,8 @@ img{
     margin-top: 2em;
      display: grid;
      grid-template-columns: repeat(2,1fr);
+     padding: 0em 2em;
+     grid-gap: 1em;
     
     
 }
@@ -158,6 +164,8 @@ img{
 }
 .about__box_1{
     margin: 0 auto;
+    background-color: #0D1430;
+    padding: 4em 2.5em;
 }
 .about__box_1 p{
     line-height: 2rem;
@@ -167,10 +175,7 @@ img{
     font-weight: bolder;
     font-size: 1.5rem;
 }
-.about__box_1{
-    border: 1px solid #63A5FF;
-    padding: 4em 2.5em;
-}
+
 .flow__boxMe{
     border: 1px solid #63A5FF;
 }

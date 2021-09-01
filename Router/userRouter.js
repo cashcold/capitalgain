@@ -260,11 +260,11 @@ Router.post('/deposit', async(req,res)=>{
         user_id: req.body.user_id,
         user_Name: req.body.user_Name,
         full_Name: req.body.full_Name,
-        planNow: req.body.planNow,
+        fixedDepositAmount: (req.body.fixedDepositAmount),
         depositAmount: Number(req.body.depositAmount),
         walletAddress: req.body.walletAddress,
         email: req.body.email,
-        date: req.body.date
+        deposit_date: req.body.deposit_date
 
     })
 

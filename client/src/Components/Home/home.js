@@ -28,41 +28,54 @@ class Home extends Component {
     render() { 
         const CalculatorEngine = ()=>{
            if( this.state.amountCalculate){
-                if( this.state.amountCalculate < 2000){
+                if( this.state.amountCalculate <= 59){
                 const Percentage = this.state.amountCalculate * 9.5/100
-               document.querySelector('.totalAmount').innerHTML = "$"+Percentage
-               document.querySelector('.percent_check').innerHTML = "9.5"
+                const totoalCheck = Number(this.state.amountCalculate) + (Percentage)
+               document.querySelector('.totalAmount').innerHTML = "$"+ totoalCheck
+               document.querySelector('.percent_check').innerHTML = Percentage +" %"
                document.querySelector('.planNowType').innerHTML = "PLAN I"
                 }
  
             }
            if( this.state.amountCalculate){
-                if( this.state.amountCalculate > 2001){
+                if( this.state.amountCalculate >= 60 ){
                 const Percentage = this.state.amountCalculate * 29/100
-               document.querySelector('.totalAmount').innerHTML = "$"+Percentage
-               document.querySelector('.percent_check').innerHTML = "29"
+                const totoalCheck = Number(this.state.amountCalculate) + (Percentage)
+               document.querySelector('.totalAmount').innerHTML = "$"+totoalCheck
+               document.querySelector('.percent_check').innerHTML = Percentage
                document.querySelector('.planNowType').innerHTML = "PLAN II"
                 }
  
             }
            if( this.state.amountCalculate){
-                if( this.state.amountCalculate > 4001){
-                const Percentage = this.state.amountCalculate * 48/100
-               document.querySelector('.totalAmount').innerHTML = "$"+Percentage
-               document.querySelector('.percent_check').innerHTML = "48"
+                if( this.state.amountCalculate > 119){
+                const Percentage = this.state.amountCalculate * 49.5/100
+                const totoalCheck = Number(this.state.amountCalculate) + (Percentage)
+               document.querySelector('.totalAmount').innerHTML = "$"+totoalCheck
+               document.querySelector('.percent_check').innerHTML = Percentage
                document.querySelector('.planNowType').innerHTML = "PLAN III"
                 }
  
             }
            if( this.state.amountCalculate){
-                if( this.state.amountCalculate > 6001){
-                const Percentage = this.state.amountCalculate * 29/100
-               document.querySelector('.totalAmount').innerHTML = "$"+Percentage
-               document.querySelector('.percent_check').innerHTML = "68"
+                if( this.state.amountCalculate > 199){
+                const Percentage = this.state.amountCalculate * 70/100
+                const totoalCheck = Number(this.state.amountCalculate) + (Percentage)
+               document.querySelector('.totalAmount').innerHTML = "$"+totoalCheck
+               document.querySelector('.percent_check').innerHTML = Percentage
                document.querySelector('.planNowType').innerHTML = "PLAN IIII"
                 }
  
             }
+           if( this.state.amountCalculate){
+                if( this.state.amountCalculate > 300){
+               document.querySelector('.totalAmount').innerHTML = "Please Max Investment is 300$ "
+               document.querySelector('.percent_check').innerHTML = 'Not Avalibale'
+               document.querySelector('.planNowType').innerHTML = ""
+                }
+ 
+            }
+            
               
         }
                 
@@ -122,12 +135,12 @@ class Home extends Component {
                            <div className="typeAmount_box_1">
                               <div className="innerTypeAmount">
                                   <p>Min: </p>
-                                  <p className='typeAmountSpan'>$10</p>
+                                  <p className='typeAmountSpan'>$5</p>
                               </div>
                                <span className='spanMainType'></span>
                               <div className="innerTypeAmount innerTypeAmount2">
                                   <p>Max: </p>
-                                  <p className='typeAmountSpan'>$2000</p>
+                                  <p className='typeAmountSpan'>$59</p>
                               </div>
                                <span className='spanMainType'></span>
                               <div className="innerTypeAmount innerTypeAmount2">
@@ -146,12 +159,12 @@ class Home extends Component {
                            <div className="typeAmount_box_1">
                               <div className="innerTypeAmount">
                                   <p>Min: </p>
-                                  <p className='typeAmountSpan'>$2001</p>
+                                  <p className='typeAmountSpan'>$60</p>
                               </div>
                                <span className='spanMainType'></span>
                               <div className="innerTypeAmount innerTypeAmount2">
                                   <p>Max: </p>
-                                  <p className='typeAmountSpan'>$4000</p>
+                                  <p className='typeAmountSpan'>$119</p>
                               </div>
                                <span className='spanMainType'></span>
                               <div className="innerTypeAmount innerTypeAmount2">
@@ -163,19 +176,19 @@ class Home extends Component {
                        <div className="box_box__1">
                            <h1>PLAN III</h1>
                            <div className="innerPlan innerPlanother">
-                               <h1 className='percentRate'>48</h1>
+                               <h1 className='percentRate'>49.5</h1>
                                <h3>%</h3>
                            </div>
                            <h3 className='planType'>5 DAYS</h3>
                            <div className="typeAmount_box_1">
                               <div className="innerTypeAmount">
                                   <p>Min: </p>
-                                  <p className='typeAmountSpan'>$4001</p>
+                                  <p className='typeAmountSpan'>$120</p>
                               </div>
                                <span className='spanMainType'></span>
                               <div className="innerTypeAmount innerTypeAmount2">
                                   <p>Max: </p>
-                                  <p className='typeAmountSpan'>$600</p>
+                                  <p className='typeAmountSpan'>$199</p>
                               </div>
                                <span className='spanMainType'></span>
                               <div className="innerTypeAmount innerTypeAmount2">
@@ -187,19 +200,19 @@ class Home extends Component {
                        <div className="box_box__1">
                            <h1>PLAN IV</h1>
                            <div className="innerPlan innerPlanother">
-                               <h1 className='percentRate'>68</h1>
+                               <h1 className='percentRate'>70</h1>
                                <h3>%</h3>
                            </div>
                            <h3 className='planType'>7 DAYS</h3>
                            <div className="typeAmount_box_1">
                               <div className="innerTypeAmount">
                                   <p>Min: </p>
-                                  <p className='typeAmountSpan'>$6001</p>
+                                  <p className='typeAmountSpan'>$200</p>
                               </div>
                                <span className='spanMainType'></span>
                               <div className="innerTypeAmount innerTypeAmount2">
                                   <p>Max: </p>
-                                  <p className='typeAmountSpan'>$8000</p>
+                                  <p className='typeAmountSpan'>$300</p>
                               </div>
                                <span className='spanMainType'></span>
                               <div className="innerTypeAmount innerTypeAmount2">
@@ -241,7 +254,7 @@ class Home extends Component {
                         <h1>ABOUT <span>OUR COMPANY</span></h1>
                         <p>Capital Gain Management Co. is at heart a bitcoin investment company. However, we are opportunistic and are looking at other cryptocurrency resource opportunities that present a favorable upside.</p>
                         <p>The Company is well financed and management has a wealth of experience in all aspects of mineral exploration and development. Capital Gain Management Co. is also a place to invest and earn profits with stable percent.</p>
-                        <a href='' classname='btn btn__read_more'>READ MORE</a>
+                        <a href='/about-us' classname='btn btn__read_more'>READ MORE</a>
                     </div>
                     <div className="about__box_2">
                         <img src={require('../../images/bitcoin-3396302.jpg')} />

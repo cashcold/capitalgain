@@ -12,7 +12,7 @@ class AccountRouter extends Component {
             bitcoin: '',
             user_id: '',
             email: '',
-            date: '',
+            register_date: '',
             accountBalance: '',
             activetDeposit: '',
             totalDeposit: [],
@@ -39,7 +39,7 @@ class AccountRouter extends Component {
          JSON.stringify( sessionStorage.setItem('activetDeposit',decoded.activetDeposit))
          JSON.stringify( sessionStorage.setItem('accountBalance',decoded.accountBalance))
          JSON.stringify( sessionStorage.setItem('bitcoin',decoded.bitcoin))
-         JSON.stringify( sessionStorage.setItem('date',decoded.date))
+         JSON.stringify( sessionStorage.setItem(' register_date',decoded.date))
          JSON.stringify( sessionStorage.setItem('ip_address',decoded.ip_address))
         this.setState({
             user_id: decoded.user_id,
@@ -50,7 +50,7 @@ class AccountRouter extends Component {
             accountBalance: decoded.accountBalance,
             activetDeposit: decoded.activetDeposit,
             ip_address: decoded.ip_address,
-            date: decoded.date
+            register_date: decoded.date
          })
     }
     render() { 
@@ -63,7 +63,7 @@ class AccountRouter extends Component {
                             <h5>TOTAL INVESTMENT</h5>
                             <h5> $ 0.00</h5>
                         </div>
-                        <a href='/deposit'><h2 className='btn'>INVEST</h2></a>
+                        <a href='/dashboard/deposit'><h2 className='btn'>INVEST</h2></a>
                     </div>
                     <div className="dash__box__1">
                         <i class="fas fa-comments-dollar fa-5x"></i>

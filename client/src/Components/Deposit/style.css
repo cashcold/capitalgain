@@ -89,6 +89,9 @@
     width: 40%;
     margin: 0 auto;
 }
+.other__inner_box_2 input{
+    background-color: black;
+}
 
 
 @media screen and (max-width: 768px){

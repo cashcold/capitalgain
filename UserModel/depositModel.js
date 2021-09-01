@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    
+     
     user_id: {
         type: String,
         require: true,
@@ -14,16 +14,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    planNow: {
+    fixedDepositAmount: {
         type: String,
         require: true,
     },
     depositAmount: {
-        
-        type: Number,
-        require: true,
-    },
-    depositAmountlast: {
         
         type: Number,
         require: true,
@@ -38,7 +33,7 @@ const userSchema = new mongoose.Schema({
         require: true,
     },
     
-    date:{
+    deposit_date:{
         type: String,
         require: true,
     },
