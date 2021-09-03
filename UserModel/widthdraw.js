@@ -1,30 +1,30 @@
 const mongoose = require('mongoose');
  
 const userSchema = new mongoose.Schema({
-      user_id: {
+    user_id: {
         type: String,
         require: true,
     },
     user_Name: { 
         type: String,
     },
+    full_Name: { 
+        type: String,
+    },
     accountBalance: {
-        type: Number    ,
-    },  
+       
+    }, 
+    activetDeposit: {
+      
+    }, 
+    zero_accountBalance: {
+      
+    }, 
     email: {
         type: String,
         require: true,
     },
     bitcoin: {
-        type: String,
-    },
-    bitcoinCash: {
-        type: String,
-    },
-    ethereum: {
-        type: String,
-    },
-    zero_accountBalance: {
         type: String,
     },
     date:{

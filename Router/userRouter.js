@@ -281,10 +281,11 @@ Router.post("/updateAccountBalance/:id", async (req, res) => {
 });
 
 Router.post('/withdraw/:id', async(req,res)=>{
-    console.log(req.body)
     const user = await User.findById(req.params.id);
     if (req.body.zero_accountBalance) user.activetDeposit = req.body.zero_accountBalance;
     await user.save();
+    console.log(`This is Account ZERO Balance ${req.body.zero_accountBalance}`)
+    console.log(`This is Account Activity DEposit ${req.body.activetDeposit}`)
 
     const email = req.body.email;
     const user_Name = req.body.user_Name; 
@@ -292,13 +293,13 @@ Router.post('/withdraw/:id', async(req,res)=>{
     const WithdrawNow = new WithdrawDeposit({
     user_id: req.body.user_id,
     user_Name: req.body.user_Name,
-    accountBalance: Number(req.body.accountBalance),
+    full_Name: req.body.full_Name,
+    accountBalance: req.body.accountBalance,
+    activetDeposit: req.body.activetDeposit,
     zero_accountBalance: req.body.zero_accountBalance,
     email: req.body.email,
     date: req.body.date,
     bitcoin: req.body.bitcoin,
-    bitcoinCash: req.body.bitcoinCash,
-    ethereum: req.body.ethereum,
 })
 await WithdrawNow.save()
 

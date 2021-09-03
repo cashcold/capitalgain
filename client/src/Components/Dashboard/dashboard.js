@@ -21,10 +21,13 @@ class Dashboard extends Component {
          }
     }
     componentDidMount(){
-        // const url = this.props.match.path;
-        // this.setState({
-        //     url
-        // })
+        const RefreshToken = sessionStorage.getItem('RefreshToken')
+        setInterval(()=>{
+            if(RefreshToken){
+                sessionStorage.removeItem('x-access-token')
+                sessionStorage.setItem('x-access-token',RefreshToken)
+            }
+        },1000)
     }
     LogoutNow = ()=>{
         sessionStorage.removeItem('x-access-token');
@@ -60,7 +63,7 @@ class Dashboard extends Component {
                         <Route path='/dashboard/edit'  exact  component={EditMainRouter}/> 
                         <Route path='/dashboard'  exact component={AccountRouter}/> 
                         <Route path='/dashboard/account'  exact component={AccountRouter}/> 
-                        <Route path='/dashboard/withdraw'  exact component={WithdrawMain}/> 
+                        <Route path='/dashboard/withdraw/:id'  exact component={WithdrawMain}/> 
                         <Route path='/dashboard/deposit'  exact component={DepositMain}/> 
                         <Route path='/dashboard/confirm_deposit'  exact component={ConfirmDeposit}/> 
                         <Route path='/dashboard/transaction/total_transaction'  exact component={TotalTransaction}/>

@@ -72,6 +72,11 @@
        padding: 2em 0em;
   }
 
+ .withdrawBtn{
+     display: none;
+     margin:  0 auto;
+ }
+
 @media screen and (max-width: 768px){
     .widthraw__h1{
         padding: 0.8em 0em;

@@ -28,6 +28,11 @@ class MainApp extends Component {
     }
     componentDidMount(){
       
+        const RefreshToken = sessionStorage.getItem('RefreshToken')
+        if(RefreshToken){
+            sessionStorage.removeItem('x-access-token')
+            sessionStorage.setItem('x-access-token',RefreshToken)
+        }
        
     }
     render() { 
