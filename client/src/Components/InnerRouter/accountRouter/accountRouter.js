@@ -74,7 +74,7 @@ class AccountRouter extends Component {
             const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
             const date = new Date(`${this.state.timestamp}`);
             const today_date = new Date();
-            const date_24hrs = addMinutes(date,2)
+            const date_24hrs = addDays(date,1)
             const date_3days = addDays(date,3)
             const date_5days = addDays(date,5)
             const date_7days = addDays(date,7)
