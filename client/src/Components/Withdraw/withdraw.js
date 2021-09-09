@@ -17,6 +17,7 @@ class WithdrawMain extends Component {
             email: '',
             accountBalance: '',
             bitcoin: '',
+            activetDeposit: '',
             withdraw_date: ''
          }
 
@@ -47,6 +48,7 @@ class WithdrawMain extends Component {
             email: this.state.email,
             date: this.state.withdraw_date,
             bitcoin: this.state.bitcoin,
+            activetDeposit: this.state.activetDeposit,
             
         }
         const id  = this.props.match.params.id
@@ -67,12 +69,16 @@ class WithdrawMain extends Component {
 
 
     componentDidMount(){
+        
+    
+      
 
         const user_id =  sessionStorage.getItem('user_id')
         const user_Name =  sessionStorage.getItem('user_Name')
         const full_Name =  sessionStorage.getItem('full_Name')
         const email = sessionStorage.getItem('email')
         const bitcoin = sessionStorage.getItem('bitcoin')
+        const activetDeposit = sessionStorage.getItem('activetDeposit')
         const withdraw_date = new Date().toString()
 
         this.setState({
@@ -81,7 +87,8 @@ class WithdrawMain extends Component {
             email,
             bitcoin,
             user_id,
-            withdraw_date
+            withdraw_date,
+            activetDeposit
         })
 
 

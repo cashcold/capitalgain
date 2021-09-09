@@ -192,7 +192,7 @@ Router.post('/withdrawInfo',async(req,res)=>{
     if(user){
         const currentDeposit = await WithdrawDeposit.aggregate([
             { $match : { user_id : user_id } },
-            {$group: {_id: "$user_id", WithdrawAmount: { $sum: "$accountBalance" },WithdrawAmountlast: { $last: "$accountBalance" }}  },
+            {$group: {_id: "$user_id", WithdrawAmount: { $sum: "$activetDeposit" },WithdrawAmountlast: { $last: "$activetDeposit" }}  },
             
         ])
     res.send(currentDeposit)
@@ -226,7 +226,7 @@ Router.post('/checkdate',async(req,res)=>{
     if(user){
         const currentDeposit = await UserDeposit.aggregate([
             { $match : { user_id : user_id } },
-            {$group: {_id: "$user_id",lastDate : { $last: "$createdAt" }}  },
+            {$group: {_id: "$user_id",lastDate : { $last: "$date" }}  },
             
         ])
     res.json(currentDeposit)
@@ -264,7 +264,8 @@ Router.post('/deposit', async(req,res)=>{
         depositAmount: Number(req.body.depositAmount),
         walletAddress: req.body.walletAddress,
         email: req.body.email,
-        deposit_date: req.body.deposit_date
+        deposit_date: req.body.deposit_date,
+        date: req.body.date
 
     })
 
@@ -284,8 +285,6 @@ Router.post('/withdraw/:id', async(req,res)=>{
     const user = await User.findById(req.params.id);
     if (req.body.zero_accountBalance) user.activetDeposit = req.body.zero_accountBalance;
     await user.save();
-    console.log(`This is Account ZERO Balance ${req.body.zero_accountBalance}`)
-    console.log(`This is Account Activity DEposit ${req.body.activetDeposit}`)
 
     const email = req.body.email;
     const user_Name = req.body.user_Name; 

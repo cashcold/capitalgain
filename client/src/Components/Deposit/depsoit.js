@@ -19,7 +19,8 @@ class DepositMain extends Component {
             full_Name: '',
             email: '',
             amount: '',
-            deposit_date: ''
+            deposit_date: '',
+            date: ''
         }
 
           this.handleChange = this.handleChange.bind(this)
@@ -35,7 +36,11 @@ class DepositMain extends Component {
         this.setState({
             deposit_date
         })
-       
+        const DateTime = new Date().toString()
+        this.setState({
+            date: DateTime
+        })
+        console.log(this.state.date)
     }
 
     onSubmit = (event)=>{
@@ -51,6 +56,7 @@ class DepositMain extends Component {
             full_Name: this.state.full_Name,
             planNow: this.state.planNow,
             depositAmount: this.state.depositAmount,
+            activetDeposit: this.state.depositAmount,
             walletAddress: this.state.walletAddress,
             date: this.state.date,
             checkWallet: this.state.checkWallet,

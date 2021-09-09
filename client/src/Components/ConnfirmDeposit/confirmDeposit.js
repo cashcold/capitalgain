@@ -12,6 +12,7 @@ class ConfirmDeposit extends Component {
             user_id: '',
             planNow: '',
             depositAmount: '',
+            activetDeposit: '',
             fixedDepositAmount: '',
             walletAddress: '',
             user_Name: '',
@@ -27,6 +28,13 @@ class ConfirmDeposit extends Component {
     }
 
     componentDidMount(){
+        
+        const DateTime = new Date().toString()
+        this.setState({
+            date: DateTime
+        })
+
+
         const depositAmountCheck = sessionStorage.getItem('depositAmount')
         if(Number(depositAmountCheck) <= 59){
           const uCheck =   document.querySelector('.planNow').innerHTML = "24 HOURS"
@@ -106,6 +114,7 @@ class ConfirmDeposit extends Component {
         const bitcoin  = sessionStorage.getItem('bitcoin')
         const email  = sessionStorage.getItem('email')
         const depositAmount = sessionStorage.getItem('depositAmount')
+        const activetDeposit = sessionStorage.getItem('activetDeposit')
         const walletAddress = sessionStorage.getItem('walletAddress')
         const date = new Date().toString()
 
@@ -118,7 +127,8 @@ class ConfirmDeposit extends Component {
             walletAddress,
             email,
             date,
-            walletAddress: bitcoin
+            walletAddress: bitcoin,
+            activetDeposit
 
 
         })
@@ -135,14 +145,11 @@ class ConfirmDeposit extends Component {
         fixedDepositAmount: this.state.fixedDepositAmount,
         depositAmount: Number(this.state.depositAmount),
         walletAddress: this.state.walletAddress,
-        deposit_date: this.state.deposit_date
+        deposit_date: this.state.deposit_date,
+        date: this.state.date
 
        }
-      
-
-       console.log(NewDeposit)
        
-    //    http://localhost:8000
        axios.post( "/users/deposit",NewDeposit).then(res => {toast.success('...Waiting for Blockchain confirmation')}).then(res => setTimeout(()=>{
             window.location='/dashboard'
        },1100))
@@ -151,8 +158,6 @@ class ConfirmDeposit extends Component {
 
 
     render() { 
-    
-        console.log(`this is fixed Deposit ${this.state.fixedDepositAmount}`)
         return(
             <div className='confirm'>
                 <div className='confirmDepositNow'>

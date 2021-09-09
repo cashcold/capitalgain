@@ -22,7 +22,8 @@ class AccountRouter extends Component {
             totalDeposit_id: '',
             login: '',
             plan: '',
-            timestamp: ''
+            timestamp: '',
+            Refedate: ''
          }
 
          this.handleChange = this.handleChange.bind(this)
@@ -64,82 +65,80 @@ class AccountRouter extends Component {
 
          const id = decoded.user_id
          
-          axios.post('/users/checkdate',{id}).then(data => this.setState({
+        
+        axios.post('/users/checkdate',{id}).then(data => this.setState({
             timestamp: data.data.map(user => user.lastDate)
+            // timestampT: data.data.map(user => console.log(user.lastDate)),
+         }))
+
+         axios.post('/users/depositInfo',{id}).then(data => this.setState({
+            totalDeposit: data.data
+         }))
+          axios.post('/users/withdrawInfo',{id}).then(data => this.setState({
+            withdrawTotal: data.data
          }))
          
          
-         
-         setTimeout(()=>{
-            const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
-            const date = new Date(`${this.state.timestamp}`);
-            const today_date = new Date();
-            const date_24hrs = addDays(date,1)
-            const date_3days = addDays(date,3)
-            const date_5days = addDays(date,5)
-            const date_7days = addDays(date,7)
-
-                if(activetDeposit__amount){
-                    if(activetDeposit__amount <= 59){
-                      if(today_date > date_24hrs){
-                            document.querySelector('.activetStatus').innerHTML = "0.00$"
-                            document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
-                        
-                        }else{
-                        
-                        }
-                    }
-                }
-                // if(activetDeposit__amount){
-                //     if(activetDeposit__amount <= 59){
-                //       if(today_date > date_24hrs){
-                //             document.querySelector('.activetStatus').innerHTML = "0.00$"
-                //             document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
-                        
-                //         }else{
-                        
-                //         }
-                //     }
-                // }
-                if(activetDeposit__amount){
-                    if(activetDeposit__amount >= 60){
-                      if(today_date > date_3days){
-                            document.querySelector('.activetStatus').innerHTML = "0.00$"
-                            document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
-                        
-                        }else{
-                        
-                        }
-                    }
-                }
-                if(activetDeposit__amount){
-                    if(activetDeposit__amount > 119){
-                      if(today_date > date_5days){
-                            document.querySelector('.activetStatus').innerHTML = "0.00$"
-                            document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
-                        
-                        }else{
-                        
-                        }
-                    }
-                }
-                if(activetDeposit__amount){
-                    if(activetDeposit__amount > 199){
-                      if(today_date > date_7days){
-                            document.querySelector('.activetStatus').innerHTML = "0.00$"
-                            document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
-                        
-                        }else{
-                        
-                        }
-                    }
-                }
-          
-   
-            },800)
+       
          
     }
     render() { 
+       const CreditDashboard = ()=>{
+        const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
+        const date = new Date(`${this.state.timestamp}`);;
+
+        const today_date = new Date();
+        const date_24hrs = addDays(date,1)
+        const date_3days = addDays(date,3)
+        const date_5days = addDays(date,5)
+        const date_7days = addDays(date,7)
+
+            if(activetDeposit__amount){
+                if(activetDeposit__amount <= 59){
+                  if(today_date > date_24hrs){
+                        document.querySelector('.activetStatus').innerHTML = "$0.00"
+                        document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
+                    
+                    }else{
+                    
+                    }
+                }
+            }
+            if(activetDeposit__amount){
+                if(activetDeposit__amount >= 60){
+                  if(today_date > date_3days){
+                        document.querySelector('.activetStatus').innerHTML = "$0.00"
+                        document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
+                    
+                    }else{
+                    
+                    }
+                }
+            }
+            if(activetDeposit__amount){
+                if(activetDeposit__amount > 119){
+                  if(today_date > date_5days){
+                        document.querySelector('.activetStatus').innerHTML = "$0.00"
+                        document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
+                    
+                    }else{
+                    
+                    }
+                }
+            }
+            if(activetDeposit__amount){
+                if(activetDeposit__amount > 199){
+                  if(today_date > date_7days){
+                        document.querySelector('.activetStatus').innerHTML = "$0.00"
+                        document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
+                    
+                    }else{
+                    
+                    }
+                }
+            }
+       }
+       CreditDashboard()
         return ( 
             <div className='account__router'>
                  <section className='dashboard__section_box__3'>
@@ -147,7 +146,7 @@ class AccountRouter extends Component {
                         <i class="fas fa-coins fa-5x"></i>
                         <div className="dashText">
                             <h5>TOTAL INVESTMENT</h5>
-                            <h5> $ 0.00</h5>
+                            <h5> $ {this.state.totalDeposit.map(user => user.depositAmount)}.00</h5>
                         </div>
                         <a href='/dashboard/deposit'><h2 className='btn'>INVEST</h2></a>
                     </div>
@@ -175,11 +174,11 @@ class AccountRouter extends Component {
                         </div>
                         <div className="all__box">
                             <p>Total Deposit :</p>
-                            <p>$0.00</p>
+                            <p>$ {this.state.totalDeposit.map(user => user.depositAmount)}.00</p>
                         </div>
                         <div className="all__box">
                             <p>Last Deposit :</p>
-                            <p>$0.00</p>
+                            <p>$ {this.state.totalDeposit.map(user => user.depositAmountlast)}.00</p>
                         </div>
                     </div>
                     <div className="all__about_-box__1">
@@ -190,11 +189,11 @@ class AccountRouter extends Component {
                         </div>
                         <div className="all__box">
                             <p>Total Withdraw :</p>
-                            <p>$0.00</p>
+                            <p>$ {this.state.withdrawTotal.map(user => user.WithdrawAmount)}.00</p>
                         </div>
                         <div className="all__box">
                             <p>Last Withdraw :</p>
-                            <p>$0.00</p>
+                            <p>$ {this.state.withdrawTotal.map(user => user.WithdrawAmountlast)}.00</p>
                         </div>
                     </div>
                 </section>

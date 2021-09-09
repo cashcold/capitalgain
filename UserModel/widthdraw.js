@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema({
        
     }, 
     activetDeposit: {
+        type: Number
       
     }, 
     zero_accountBalance: {
