@@ -39,12 +39,12 @@ class Navbar extends Component {
             })
         }
         LogoRedirect()
-    }
-    LogoutNow = ()=>{
-        sessionStorage.removeItem('x-access-token');
-        sessionStorage.clear(); 
-    }
-    render() { 
+        }
+        LogoutNow = ()=>{
+            sessionStorage.removeItem('x-access-token');
+            sessionStorage.clear(); 
+        }
+        render() { 
         if(this.state.isLogin){
             document.querySelector(".btn-login-in").style.display = "none"
             document.querySelector(".btn-join-us").style.display = "none"

@@ -19,21 +19,25 @@ class Dashboard extends Component {
         this.state = { 
             url: ''
          }
+         this.LogoutNow = this.LogoutNow.bind(this)
     }
+    
     componentDidMount(){
+
         const RefreshToken = sessionStorage.getItem('RefreshToken')
-        setInterval(()=>{
+        setTimeout(()=>{
             if(RefreshToken){
                 sessionStorage.removeItem('x-access-token')
                 sessionStorage.setItem('x-access-token',RefreshToken)
             }
         },1000)
+       
     }
     LogoutNow = ()=>{
         sessionStorage.removeItem('x-access-token');
         sessionStorage.clear(); 
-        window.locaton='/'
     }
+   
     render() { 
         return ( 
             <div className='dashboard__main'>
@@ -46,7 +50,7 @@ class Dashboard extends Component {
                         <Dropdown.Item  href='/dashboard/withdraw'>WITHDRAW</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/transaction/total_transaction'>TRANSACTION</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/edit'>EDIT</Dropdown.Item>
-                        <Dropdown.Item  href=''  onClick={this.LogoutNow}>SIGN-OUT</Dropdown.Item>
+                        <Dropdown.Item  href='/'  onClick={this.LogoutNow}>SIGN-OUT</Dropdown.Item>
                     </DropdownButton>
                 </section>
                 <section className='dashboard__section_box__2'>

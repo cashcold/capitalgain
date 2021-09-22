@@ -82,6 +82,7 @@ class AccountRouter extends Component {
        
          
     }
+    
     render() { 
        const CreditDashboard = ()=>{
         const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
@@ -143,7 +144,7 @@ class AccountRouter extends Component {
             <div className='account__router'>
                  <section className='dashboard__section_box__3'>
                     <div className="dash__box__1">
-                        <i class="fas fa-coins fa-5x"></i>
+                        <i class="fas fa-coins fa-3x"></i>
                         <div className="dashText">
                             <h5>TOTAL INVESTMENT</h5>
                             <h5> $ {this.state.totalDeposit.map(user => user.depositAmount)}.00</h5>
@@ -151,7 +152,7 @@ class AccountRouter extends Component {
                         <a href='/dashboard/deposit'><h2 className='btn'>INVEST</h2></a>
                     </div>
                     <div className="dash__box__1">
-                        <i class="fas fa-comments-dollar fa-5x"></i>
+                        <i class="fas fa-comments-dollar fa-3x"></i>
                         <div className="dashText">
                             <h5>ACCOUNT BALANCE</h5>
                             <h5 className='balanceMe'> $ {this.state.accountBalance}.00</h5>

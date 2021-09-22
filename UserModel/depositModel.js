@@ -34,8 +34,6 @@ const userSchema = new mongoose.Schema({
     },
     
     deposit_date:{
-        type: String,
-        require: true,
     },
     date: {
         

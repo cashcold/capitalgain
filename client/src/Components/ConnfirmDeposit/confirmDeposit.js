@@ -29,10 +29,7 @@ class ConfirmDeposit extends Component {
 
     componentDidMount(){
         
-        const DateTime = new Date().toString()
-        this.setState({
-            date: DateTime
-        })
+        
 
 
         const depositAmountCheck = sessionStorage.getItem('depositAmount')

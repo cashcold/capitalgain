@@ -218,6 +218,42 @@ Router.post('/depositInfo',async(req,res)=>{
 })
 
 
+Router.post('/transaction_depositInfo',async(req,res)=>{
+   
+    user_id = req.body.id
+    fromDate = req.body.fromDate
+    endDate = req.body.endDate
+    const user = await UserDeposit.findOne({user_id: req.body.id})
+    console.log(req.body)
+   if(user){
+       const showTransactionDate = await UserDeposit.find({"date": {$gte: fromDate }})
+       
+     res.send(showTransactionDate)
+   }
+
+ 
+    
+    
+})
+// Router.post('/transaction_depositInfo',async(req,res)=>{
+   
+//     user_id = req.body.id
+//     fromDate = req.body.fromDate
+//     const user = await UserDeposit.findOne({user_id: req.body.id})
+//     console.log(req.body)
+
+//     if(user){
+//         const currentDeposit = await UserDeposit.aggregate([
+//             { $match : { user_id : user_id } },
+            
+//         ])
+//     res.send(currentDeposit)
+//     }
+    
+    
+// })
+
+
 Router.post('/checkdate',async(req,res)=>{
    
     user_id = req.body.id
@@ -234,23 +270,6 @@ Router.post('/checkdate',async(req,res)=>{
     
     
 })
-
-// Router.post('/checkdate',async(req,res)=>{
-   
-//     user_id = req.body.id
-//     const user = await UserDeposit.findOne({user_id: req.body.id})
-
-//     if(user){
-//         const currentDeposit = await UserDeposit.aggregate([
-//             { $match : { user_id : user_id } },
-//             {$group: {_id: "$user_id",lastDate : { $last: "$createdAt" }}  },
-            
-//         ])
-//     res.json(currentDeposit)
-//     }
-    
-    
-// })
 
 
 

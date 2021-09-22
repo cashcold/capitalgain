@@ -13,6 +13,8 @@ class DepositTransaction extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            transaction_depositInfo: [],
+            totalDeposit: [],
             startDate: new Date(),
             endDate: new Date()
          }
@@ -45,11 +47,36 @@ class DepositTransaction extends Component {
           startDate: this.state.startDate,
           endDate: this.state.endDate
         }
-        axios.post("/users/total_tansaction/",checkTotalTransaction).then(res => {toast.success("Transaction Successful")}).then(res => setTimeout(()=>{
-         console.log(checkTotalTransaction)
-      }),100).catch(err => {toast.error(err.response.data)})
+
+        console.log(checkTotalTransaction)
+      //   axios.post("/users/total_tansaction/",checkTotalTransaction).then(res => {toast.success("Transaction Successful")}).then(res => setTimeout(()=>{
+      //    console.log(checkTotalTransaction)
+      // }),100).catch(err => {toast.error(err.response.data)})
+      // 
       }
-    render() { 
+
+      componentDidMount(){
+        const id =  sessionStorage.getItem('user_id')
+
+            axios.post('/users/transaction_depositInfo',{id}).then(data => this.setState({
+              transaction_depositInfo: data.data
+          }))
+
+          axios.post('/users/depositInfo',{id}).then(data => this.setState({
+            totalDeposit: data.data
+        }))
+
+
+           
+
+      }
+    render() {  
+      console.log(this.state.transaction_depositInfo)
+
+      if(Number(this.state.totalDeposit.map(user => user.depositAmount)) > 1){
+        document.querySelector(".NoTransaction_P").style.display = "none"
+      }
+
       
         return ( 
             <div className='total_transaction'>
@@ -81,14 +108,42 @@ class DepositTransaction extends Component {
                    </section>
                    <section className='total__transaction__flow'>
                       <div className="all_transaction_chat">
-                          <div className="total_tra__box_1"><h4><span>Type</span></h4></div>
-                          <div className="total_tra__box_1"><h4><span>Amount</span></h4></div>
-                      <div className="total_tra__box_1"><h4><span>Date</span></h4></div>
+                          <div className="total_tra__box_1">
+                            <h4><span>Type</span></h4>
+                            {this.state.transaction_depositInfo.map(recentApi =>{
+                            return(
+                                <div className=''>
+                                   <h5>{recentApi.fixedDepositAmount}</h5>
+                                 </div>
+                            )
+                        })}
+                          </div>
+                          <div className="total_tra__box_1">
+                            <h4><span>Amount</span></h4>
+                            {this.state.transaction_depositInfo.map(recentApi =>{
+                            return(
+                                <div className=''>
+                                   <h5>$ {recentApi.depositAmount}</h5>
+                                 </div>
+                            )
+                        })}
+                            
+                          </div>
+                      <div className="total_tra__box_1">
+                        <h4><span>Date</span></h4>
+                        {this.state.transaction_depositInfo.map(recentApi =>{
+                            return(
+                                <div className=''>
+                                   <h5>{recentApi.date}</h5>
+                                 </div>
+                            )
+                        })}
+                      </div>
                     </div>
-                    <p>No transactions found</p>
+                    <p className='NoTransaction_P'>No transactions found</p>
                       <div className="last__transac">
                           <p className="transac_left">Total:</p>
-                          <p className="transac_right">$ 0.00</p>
+                          <p className="transac_right">$ {this.state.totalDeposit.map(user => user.depositAmount)}.00</p>
                       </div>
                    </section>
             </div>

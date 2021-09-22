@@ -57,6 +57,18 @@
 .transac_right{
     text-align: right;
 }
+
+.total_tra__box_1 h5, .last__transac p{
+    padding: 3em 3em;
+    background-color: brown;
+}
+
+
+
+
+
+
+
 @media screen and (max-width: 768px){
     .total_transaction{
         width: 98%;
