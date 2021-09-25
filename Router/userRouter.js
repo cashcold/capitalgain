@@ -226,7 +226,7 @@ Router.post('/transaction_depositInfo',async(req,res)=>{
     const user = await UserDeposit.findOne({user_id: req.body.id})
     console.log(req.body)
    if(user){
-       const showTransactionDate = await UserDeposit.find({"createdAt": {$gte: fromDate }})
+       const showTransactionDate = await UserDeposit.find({"createdAt": {$gte: fromDate , $lte: endDate }})
        
      res.send(showTransactionDate)
    }
