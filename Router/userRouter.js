@@ -218,7 +218,7 @@ Router.post('/depositInfo',async(req,res)=>{
 })
 
 
-Router.post('/transaction_depositInfo',async(req,res)=>{
+Router.post('/transaction_depositInfo_query',async(req,res)=>{
    
     user_id = req.body.id
     fromDate = req.body.fromDate
@@ -235,23 +235,7 @@ Router.post('/transaction_depositInfo',async(req,res)=>{
     
     
 })
-// Router.post('/transaction_depositInfo',async(req,res)=>{
-   
-//     user_id = req.body.id
-//     fromDate = req.body.fromDate
-//     const user = await UserDeposit.findOne({user_id: req.body.id})
-//     console.log(req.body)
 
-//     if(user){
-//         const currentDeposit = await UserDeposit.aggregate([
-//             { $match : { user_id : user_id } },
-            
-//         ])
-//     res.send(currentDeposit)
-//     }
-    
-    
-// })
 
 
 Router.post('/checkdate',async(req,res)=>{

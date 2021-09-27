@@ -13,7 +13,9 @@ class DepositTransaction extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            id: '',
             transaction_depositInfo: [],
+            transaction_depositInfo_query: [],
             totalDeposit: [],
             startDate: new Date(),
             endDate: new Date()
@@ -24,9 +26,9 @@ class DepositTransaction extends Component {
          this.handleChangeEndDate = this.handleChangeEndDate.bind(this)
          this.onSubmit = this.onSubmit.bind(this)
     }
-    // handleChange = input => (date)=>{
-    //     this.setState({[input]: date.target.date.value})
-    // }
+    handleChange = input => (date)=>{
+        this.setState({[input]: date.target.date.value})
+    }
 
     handleChangeStartDate(date) {
         this.setState({
@@ -44,19 +46,24 @@ class DepositTransaction extends Component {
         event.preventDefault()
         
         const checkTotalTransaction = {
-          startDate: this.state.startDate,
+          id: this.state.id,
+          fromDate: this.state.startDate,
           endDate: this.state.endDate
         }
 
         console.log(checkTotalTransaction)
-      //   axios.post("/users/total_tansaction/",checkTotalTransaction).then(res => {toast.success("Transaction Successful")}).then(res => setTimeout(()=>{
-      //    console.log(checkTotalTransaction)
-      // }),100).catch(err => {toast.error(err.response.data)})
-      // 
+        axios.post('/users/transaction_depositInfo_query',checkTotalTransaction).then(data => this.setState({
+          transaction_depositInfo_query: data.data
+      }))
+      
       }
 
       componentDidMount(){
         const id =  sessionStorage.getItem('user_id')
+
+        this.setState({
+          id
+        })
 
             axios.post('/users/transaction_depositInfo',{id}).then(data => this.setState({
               transaction_depositInfo: data.data
@@ -66,14 +73,23 @@ class DepositTransaction extends Component {
             totalDeposit: data.data
         }))
 
-
-           
-
+        this.state.transaction_depositInfo_query.map(user => user.date)
+    
       }
     render() {  
-      console.log(this.state.transaction_depositInfo)
+
+     setTimeout(()=>{
+      console.log(this.state.transaction_depositInfo_query)
+     },1000)
+     setTimeout(()=>{
+       var checkDate = this.state.transaction_depositInfo_query.map(user => user.date)
+     
+     },3000)
 
       if(Number(this.state.totalDeposit.map(user => user.depositAmount)) > 1){
+        document.querySelector(".NoTransaction_P").style.display = "none"
+      }
+      if(Number(this.state.transaction_depositInfo_query.map(user => user.depositAmount)) > 1){
         document.querySelector(".NoTransaction_P").style.display = "none"
       }
 
@@ -110,7 +126,7 @@ class DepositTransaction extends Component {
                       <div className="all_transaction_chat">
                           <div className="total_tra__box_1">
                             <h4><span>Type</span></h4>
-                            {this.state.transaction_depositInfo.map(recentApi =>{
+                            {this.state.transaction_depositInfo_query.map(recentApi =>{
                             return(
                                 <div className=''>
                                    <h5>{recentApi.fixedDepositAmount}</h5>
@@ -120,7 +136,7 @@ class DepositTransaction extends Component {
                           </div>
                           <div className="total_tra__box_1">
                             <h4><span>Amount</span></h4>
-                            {this.state.transaction_depositInfo.map(recentApi =>{
+                            {this.state.transaction_depositInfo_query.map(recentApi =>{
                             return(
                                 <div className=''>
                                    <h5>$ {recentApi.depositAmount}</h5>
@@ -131,10 +147,10 @@ class DepositTransaction extends Component {
                           </div>
                       <div className="total_tra__box_1">
                         <h4><span>Date</span></h4>
-                        {this.state.transaction_depositInfo.map(recentApi =>{
+                        {this.state.transaction_depositInfo_query.map(recentApi =>{
                             return(
-                                <div className=''>
-                                   <h5>{recentApi.date}</h5>
+                                <div className='dateMe'>
+                                   <h5>{new Date(`${recentApi.createdAt}`).toDateString()}</h5>
                                  </div>
                             )
                         })}
@@ -142,7 +158,7 @@ class DepositTransaction extends Component {
                     </div>
                     <p className='NoTransaction_P'>No transactions found</p>
                       <div className="last__transac">
-                          <p className="transac_left">Total:</p>
+                          <p className="transac_left">Total Deposit:</p>
                           <p className="transac_right">$ {this.state.totalDeposit.map(user => user.depositAmount)}.00</p>
                       </div>
                    </section>

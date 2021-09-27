@@ -49,18 +49,22 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 1em;
-    padding: 0em 6em;
+    padding: 0em 2.8em;
 }
-.transac_left{
+/* .transac_left{
     text-align: left;
 }
 .transac_right{
     text-align: right;
-}
+} */
+
 
 .total_tra__box_1 h5, .last__transac p{
-    padding: 3em 3em;
+    padding: 1em 0em;
     background-color: brown;
+}
+.total__transaction__flow h5{
+    font-size: 1rem;
 }
 
 

@@ -85,7 +85,7 @@ class Other__NavBar extends Component {
                             </div>
                             <div className="other__nav_chat__3">
                                 <p><i class="fab fa-bitcoin fa-2x other__i__1"></i> ${this.state.bitcoinApi} </p>
-                                <p><i class="fab fa-ethereum  fa-2x other__i__2"></i> ETH ${this.state.EthereumApi}</p>
+                                <p><i class="fab fa-ethereum  fa-2x other__i__2"></i> ${this.state.EthereumApi}</p>
                                 <p><img src={require('../../images/Bitcoin-Cash-BCH-icon.png')} className='other__i__3'/> ${this.state.BitcoinCash}</p>
                                 <p><img src={require('../../images/download.png')} className='other__i__4'/> ${this.state.DOGEApi}</p>
                             </div>
