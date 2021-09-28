@@ -236,6 +236,24 @@ Router.post('/transaction_depositInfo_query',async(req,res)=>{
     
 })
 
+Router.post('/transaction_withdrawInfo_query',async(req,res)=>{
+   
+    user_id = req.body.id
+    fromDate = req.body.fromDate
+    endDate = req.body.endDate
+    const user = await WithdrawDeposit.findOne({user_id: req.body.id})
+    console.log(req.body)
+   if(user){
+       const showTransactionDate = await WithdrawDeposit.find({"createdAt": {$gte: fromDate , $lte: endDate }})
+       
+     res.send(showTransactionDate)
+   }
+
+ 
+    
+    
+})
+
 
 
 Router.post('/checkdate',async(req,res)=>{

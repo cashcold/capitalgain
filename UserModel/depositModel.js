@@ -43,7 +43,9 @@ const userSchema = new mongoose.Schema({
     
 },{
     timestamps: true
-})
+}
+
+)
 
 const UserDeposit = mongoose.model('UserDeposit', userSchema)
 

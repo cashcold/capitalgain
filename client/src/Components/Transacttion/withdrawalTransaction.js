@@ -13,6 +13,10 @@ class WithdrawalTransaction extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            id: '',
+            transaction_depositInfo: [],
+            transaction_withdrawInfo_query: [],
+            totalDeposit: [],
             startDate: new Date(),
             endDate: new Date()
          }
@@ -22,9 +26,9 @@ class WithdrawalTransaction extends Component {
          this.handleChangeEndDate = this.handleChangeEndDate.bind(this)
          this.onSubmit = this.onSubmit.bind(this)
     }
-    // handleChange = input => (date)=>{
-    //     this.setState({[input]: date.target.date.value})
-    // }
+    handleChange = input => (date)=>{
+        this.setState({[input]: date.target.date.value})
+    }
 
     handleChangeStartDate(date) {
         this.setState({
@@ -42,27 +46,62 @@ class WithdrawalTransaction extends Component {
         event.preventDefault()
         
         const checkTotalTransaction = {
-          startDate: this.state.startDate,
+          id: this.state.id,
+          fromDate: this.state.startDate,
           endDate: this.state.endDate
         }
-        axios.post("/users/total_tansaction/",checkTotalTransaction).then(res => {toast.success("Transaction Successful")}).then(res => setTimeout(()=>{
-         console.log(checkTotalTransaction)
-      }),100).catch(err => {toast.error(err.response.data)})
+
+        console.log(checkTotalTransaction)
+        axios.post('/users/transaction_withdrawInfo_query',checkTotalTransaction).then(data => this.setState({
+          transaction_withdrawInfo_query: data.data
+      }))
+      
       }
-    render() { 
+
+      componentDidMount(){
+        const id =  sessionStorage.getItem('user_id')
+
+        this.setState({
+          id
+        })
+
+            axios.post('/users/transaction_depositInfo',{id}).then(data => this.setState({
+              transaction_depositInfo: data.data
+          }))
+
+          axios.post('/users/depositInfo',{id}).then(data => this.setState({
+            totalDeposit: data.data
+        }))
+
+        this.state.transaction_withdrawInfo_query.map(user => user.date)
+    
+      }
+    render() {  
+
+     setTimeout(()=>{
+      console.log(this.state.transaction_withdrawInfo_query)
+     },1000)
+
+      if(Number(this.state.totalDeposit.map(user => user.depositAmount)) > 1){
+        document.querySelector(".NoTransaction_P").style.display = "none"
+      }
+      if(Number(this.state.transaction_withdrawInfo_query.map(user => user.depositAmount)) > 1){
+        document.querySelector(".NoTransaction_P").style.display = "none"
+      }
+
       
         return ( 
             <div className='total_transaction'>
               <ToastContainer/>
                 <section className='total__box__1'>
-                    <h1><span>TOTAL</span> WITHDRAWAL <span>HISTORY</span></h1>
+                <h1><span>TOTAL</span> WITHDRAWAL <span>HISTORY</span></h1>
                 </section>
               <section className='total__transac__box__1'>
                   <div className="totalTransaction__box_1">
                     <DropdownButton  id="dropdown-basic-button" title="SELECT TRANSACTION ">
-                        <Dropdown.Item href="/dashboard/transaction/total_transaction">All Transactions</Dropdown.Item>
+                        <Dropdown.Item href="/dashboard/transaction/total_transaction">Total Transaction</Dropdown.Item>
                         <Dropdown.Item href="/dashboard/transaction/total_deposit">Deposit</Dropdown.Item>
-                        <Dropdown.Item href="/dashboard/transaction/total_withdrawal">Withrawal</Dropdown.Item>
+                        <Dropdown.Item href="/dashboard/transaction/total_withdrawal">Withdrawal</Dropdown.Item>
                         <Dropdown.Item href="/dashboard/transaction/total_earning">Earning</Dropdown.Item>
                     </DropdownButton>
                   </div>
@@ -80,15 +119,33 @@ class WithdrawalTransaction extends Component {
                      </div>
                    </section>
                    <section className='total__transaction__flow'>
-                      <div className="all_transaction_chat">
-                          <div className="total_tra__box_1"><h4><span>Type</span></h4></div>
-                          <div className="total_tra__box_1"><h4><span>Amount</span></h4></div>
-                      <div className="total_tra__box_1"><h4><span>Date</span></h4></div>
+                      <div className="all_transaction_chat all_transaction_chat_withdraw">
+                          <div className="total_tra__box_1">
+                            <h4><span>Amount</span></h4>
+                            {this.state.transaction_withdrawInfo_query.map(recentApi =>{
+                            return(
+                                <div className=''>
+                                   <h5>$ {recentApi.activetDeposit}</h5>
+                                 </div>
+                            )
+                        })}
+                            
+                          </div>
+                      <div className="total_tra__box_1">
+                        <h4><span>Date</span></h4>
+                        {this.state.transaction_withdrawInfo_query.map(recentApi =>{
+                            return(
+                                <div className='dateMe'>
+                                   <h5>{new Date(`${recentApi.createdAt}`).toDateString()}</h5>
+                                 </div>
+                            )
+                        })}
+                      </div>
                     </div>
-                    <p>No transactions found</p>
+                    <p className='NoTransaction_P'>No transactions found</p>
                       <div className="last__transac">
-                          <p className="transac_left">Total:</p>
-                          <p className="transac_right">$ 0.00</p>
+                          <p className="transac_left">Total  Withdrawal:</p>
+                          <p className="transac_right">$ {this.state.totalDeposit.map(user => user.depositAmount)}.00</p>
                       </div>
                    </section>
             </div>

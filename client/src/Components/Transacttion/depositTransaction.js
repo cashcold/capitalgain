@@ -81,10 +81,6 @@ class DepositTransaction extends Component {
      setTimeout(()=>{
       console.log(this.state.transaction_depositInfo_query)
      },1000)
-     setTimeout(()=>{
-       var checkDate = this.state.transaction_depositInfo_query.map(user => user.date)
-     
-     },3000)
 
       if(Number(this.state.totalDeposit.map(user => user.depositAmount)) > 1){
         document.querySelector(".NoTransaction_P").style.display = "none"

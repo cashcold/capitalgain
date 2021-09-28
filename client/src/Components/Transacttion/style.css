@@ -41,6 +41,12 @@
     grid-template-columns: repeat(3,1fr);
     grid-gap: 1em;
 }
+.all_transaction_chat_withdraw{
+    padding: 4em 3em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+}
 .all_transaction_chat h4 {
     padding: 1em 0em ;
     background-color: white;
