@@ -254,6 +254,8 @@ Router.post('/total_transaction_history',async(req,res)=>{
     const find_User_withdraw = await WithdrawDeposit.find({"createdAt": {$gte: fromDate , $lte: endDate }})
     const both_transaction = find_User_deposit.concat(find_User_withdraw)
 
+    both_transaction.sort((a, b) => b.createdAt - a.createdAt)
+
     if(user){
     res.send(both_transaction)
     }
