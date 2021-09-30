@@ -11,6 +11,9 @@ const userSchema = new mongoose.Schema({
     full_Name: { 
         type: String,
     },
+    type: { 
+        type: String,
+    },
     accountBalance: {
        
     }, 

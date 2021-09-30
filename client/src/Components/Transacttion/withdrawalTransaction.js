@@ -16,7 +16,7 @@ class WithdrawalTransaction extends Component {
             id: '',
             transaction_depositInfo: [],
             transaction_withdrawInfo_query: [],
-            totalDeposit: [],
+            withdrawTotal: [],
             startDate: new Date(),
             endDate: new Date()
          }
@@ -69,8 +69,8 @@ class WithdrawalTransaction extends Component {
               transaction_depositInfo: data.data
           }))
 
-          axios.post('/users/depositInfo',{id}).then(data => this.setState({
-            totalDeposit: data.data
+          axios.post('/users/withdrawInfo',{id}).then(data => this.setState({
+            withdrawTotal: data.data
         }))
 
         this.state.transaction_withdrawInfo_query.map(user => user.date)
@@ -82,10 +82,10 @@ class WithdrawalTransaction extends Component {
       console.log(this.state.transaction_withdrawInfo_query)
      },1000)
 
-      if(Number(this.state.totalDeposit.map(user => user.depositAmount)) > 1){
+      if(Number(this.state.withdrawTotal.map(user => user.WithdrawAmount)) > 1){
         document.querySelector(".NoTransaction_P").style.display = "none"
       }
-      if(Number(this.state.transaction_withdrawInfo_query.map(user => user.depositAmount)) > 1){
+      if(Number(this.state.transaction_withdrawInfo_query.map(user => user. WithdrawAmount)) > 1){
         document.querySelector(".NoTransaction_P").style.display = "none"
       }
 
@@ -119,7 +119,17 @@ class WithdrawalTransaction extends Component {
                      </div>
                    </section>
                    <section className='total__transaction__flow'>
-                      <div className="all_transaction_chat all_transaction_chat_withdraw">
+                      <div className="all_transaction_chat">
+                      <div className="total_tra__box_1">
+                            <h4><span>Type</span></h4>
+                            {this.state.transaction_withdrawInfo_query.map(recentApi =>{
+                            return(
+                                <div className=''>
+                                   <h5>{recentApi.type}</h5>
+                                 </div>
+                            )
+                        })}
+                          </div>
                           <div className="total_tra__box_1">
                             <h4><span>Amount</span></h4>
                             {this.state.transaction_withdrawInfo_query.map(recentApi =>{
@@ -142,10 +152,10 @@ class WithdrawalTransaction extends Component {
                         })}
                       </div>
                     </div>
-                    <p className='NoTransaction_P'>No transactions found</p>
+                    <p className='NoTransaction_P'></p>
                       <div className="last__transac">
                           <p className="transac_left">Total  Withdrawal:</p>
-                          <p className="transac_right">$ {this.state.totalDeposit.map(user => user.depositAmount)}.00</p>
+                          <p className="transac_right">$ {this.state.withdrawTotal.map(user => user.WithdrawAmount)}.00</p>
                       </div>
                    </section>
             </div>

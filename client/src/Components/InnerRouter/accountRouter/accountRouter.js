@@ -89,10 +89,14 @@ class AccountRouter extends Component {
         const date = new Date(`${this.state.timestamp}`);;
 
         const today_date = new Date();
-        const date_24hrs = addDays(date,1)
-        const date_3days = addDays(date,3)
-        const date_5days = addDays(date,5)
-        const date_7days = addDays(date,7)
+        const date_24hrs = addMinutes(date,1)
+        const date_3days = addMinutes(date,3)
+        const date_5days = addMinutes(date,5)
+        const date_7days = addMinutes(date,7)
+        // const date_24hrs = addDays(date,1)
+        // const date_3days = addDays(date,3)
+        // const date_5days = addDays(date,5)
+        // const date_7days = addDays(date,7)
 
             if(activetDeposit__amount){
                 if(activetDeposit__amount <= 59){

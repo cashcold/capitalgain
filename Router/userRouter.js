@@ -216,6 +216,50 @@ Router.post('/depositInfo',async(req,res)=>{
     
     
 })
+Router.post('/total_transaction_checkAmount_all',async(req,res)=>{
+   
+    user_id = req.body.id
+    const user = await UserDeposit.findOne({user_id: req.body.id})
+    const user_total_transaction_deposit = await UserDeposit.find()
+    const user_total_transaction_withdraw = await WithdrawDeposit.find()
+
+    if(user){
+        const currentDeposit = await UserDeposit.aggregate([
+            {
+                $group : {
+                    _id: null,
+                    amount: { $sum: { $add : [ 
+                        user_total_transaction_deposit, user_total_transaction_withdraw 
+                    ]}},
+                }
+            },
+            
+        ])
+    res.send(currentDeposit)
+    }
+    
+    
+})
+
+
+Router.post('/total_transaction_history',async(req,res)=>{
+   
+    user_id = req.body.id
+    fromDate = req.body.fromDate
+    endDate = req.body.endDate
+    console.log(req.body)
+    
+    const user = await UserDeposit.findOne({user_id: req.body.id})
+     const find_User_deposit = await UserDeposit.find({"createdAt": {$gte: fromDate , $lte: endDate }})
+    const find_User_withdraw = await WithdrawDeposit.find({"createdAt": {$gte: fromDate , $lte: endDate }})
+    const both_transaction = find_User_deposit.concat(find_User_withdraw)
+
+    if(user){
+    res.send(both_transaction)
+    }
+    
+    
+})
 
 
 Router.post('/transaction_depositInfo_query',async(req,res)=>{
@@ -314,6 +358,7 @@ Router.post('/withdraw/:id', async(req,res)=>{
     user_id: req.body.user_id,
     user_Name: req.body.user_Name,
     full_Name: req.body.full_Name,
+    type: req.body.type,
     accountBalance: req.body.accountBalance,
     activetDeposit: req.body.activetDeposit,
     zero_accountBalance: req.body.zero_accountBalance,

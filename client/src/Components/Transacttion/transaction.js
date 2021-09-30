@@ -13,18 +13,20 @@ class TotalTransaction extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            id: '',
+            total_transaction_history: [],
             startDate: new Date(),
             endDate: new Date()
          }
          
-        //  this.handleChange = this.handleChange.bind(this)
+         this.handleChange = this.handleChange.bind(this)
          this.handleChangeStartDate = this.handleChangeStartDate.bind(this)
          this.handleChangeEndDate = this.handleChangeEndDate.bind(this)
          this.onSubmit = this.onSubmit.bind(this)
     }
-    // handleChange = input => (date)=>{
-    //     this.setState({[input]: date.target.date.value})
-    // }
+    handleChange = input => (date)=>{
+        this.setState({[input]: date.target.date.value})
+    }
 
     handleChangeStartDate(date) {
         this.setState({
@@ -42,15 +44,28 @@ class TotalTransaction extends Component {
         event.preventDefault()
         
         const checkTotalTransaction = {
-          startDate: this.state.startDate,
+          id: this.state.id,
+          fromDate: this.state.startDate,
           endDate: this.state.endDate
         }
-        axios.post("/users/total_tansaction/",checkTotalTransaction).then(res => {toast.success("Transaction Successful")}).then(res => setTimeout(()=>{
-         console.log(checkTotalTransaction)
-      }),100).catch(err => {toast.error(err.response.data)})
+        axios.post('/users/total_transaction_history',checkTotalTransaction).then(data => this.setState({
+          total_transaction_history: data.data
+      }))
+        
+      }
+
+      componentDidMount(){
+        const id =  sessionStorage.getItem('user_id')
+
+        this.setState({
+          id
+        })
       }
     render() { 
-      
+      console.log(this.state.total_transaction_history)
+      setTimeout(()=>{
+        console.log(this.state.total_transaction_history)
+      },6000)
         return ( 
             <div className='total_transaction'>
               <ToastContainer/>
@@ -81,14 +96,42 @@ class TotalTransaction extends Component {
                    </section>
                    <section className='total__transaction__flow'>
                       <div className="all_transaction_chat">
-                          <div className="total_tra__box_1"><h4><span>Type</span></h4></div>
-                          <div className="total_tra__box_1"><h4><span>Amount</span></h4></div>
-                      <div className="total_tra__box_1"><h4><span>Date</span></h4></div>
+                          <div className="total_tra__box_1">
+                            <h4><span>Type</span></h4>
+                            {this.state. total_transaction_history.map(recentApi =>{
+                            return(
+                                <div className=''>
+                                   <h5>{recentApi.fixedDepositAmount}{recentApi.type}</h5>
+                                 </div>
+                            )
+                        })}
+                          </div>
+                          <div className="total_tra__box_1">
+                            <h4><span>Amount</span></h4>
+                            {this.state. total_transaction_history.map(recentApi =>{
+                            return(
+                                <div className=''>
+                                   <h5>$ {recentApi.depositAmount}{recentApi.activetDeposit}</h5>
+                                 </div>
+                            )
+                        })}
+                            
+                          </div>
+                      <div className="total_tra__box_1">
+                        <h4><span>Date</span></h4>
+                        {this.state. total_transaction_history.map(recentApi =>{
+                            return(
+                                <div className='dateMe'>
+                                   <h5>{new Date(`${recentApi.createdAt}`).toDateString()}</h5>
+                                 </div>
+                            )
+                        })}
+                      </div>
                     </div>
-                    <p>No transactions found</p>
+                    <p className='NoTransaction_P'></p>
                       <div className="last__transac">
-                          <p className="transac_left">Total:</p>
-                          <p className="transac_right">$ 0.00</p>
+                          <p className="transac_left">Total Transaction:</p>
+                          <p className="transac_right">$0.00</p>
                       </div>
                    </section>
             </div>

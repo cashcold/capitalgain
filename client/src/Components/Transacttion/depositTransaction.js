@@ -152,7 +152,7 @@ class DepositTransaction extends Component {
                         })}
                       </div>
                     </div>
-                    <p className='NoTransaction_P'>No transactions found</p>
+                    <p className='NoTransaction_P'></p>
                       <div className="last__transac">
                           <p className="transac_left">Total Deposit:</p>
                           <p className="transac_right">$ {this.state.totalDeposit.map(user => user.depositAmount)}.00</p>
