@@ -18,6 +18,8 @@ import WithdrawMain from './Components/Withdraw/withdraw';
 import EditMainRouter from './Components/InnerRouter/editRouter/edit';
 import AccountRouter from './Components/InnerRouter/accountRouter/accountRouter';
 import TotalTransaction from './Components/Transacttion/transaction';
+import ForgotPassword from './Components/Password/forgotpassword';
+import ActivitPassword from './Components/Password/activePassword';
 
 class MainApp extends Component {
     constructor(props) {
@@ -55,8 +57,8 @@ class MainApp extends Component {
                               <Route path='/edit' exact component={EditMain}/> 
                               <Route path='/withdraw' exact component={WithdrawMain}/>
                               <Route path='/dashboard' render={(props)=> <Dashboard {...props} />} />
-                              {/* <Route path='/dashboard/' component={TotalTransaction} /> */}
-                              {/* <Route path='/dashboard/:total_transaction' render={(props)=> <TotalTransaction {...props} />} /> */}
+                              <Route path='/forgotpassword' exact component={ForgotPassword}/> 
+                              <Route path='/activitPassword/:token' exact component={ActivitPassword}/> 
                           </Switch>
                         </div>
                        <FooterMain/>

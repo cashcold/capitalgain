@@ -139,6 +139,7 @@ Router.post('/forgotpassword', async (req,res,next)=>{
      
  })
     Router.post('/editeProfil', async(req,res)=>{
+        console.log(req.body)
         const salt = await bcrypt.genSalt(10)
         const editPassword = await bcrypt.hash(req.body.password, salt)
 
@@ -146,12 +147,12 @@ Router.post('/forgotpassword', async (req,res,next)=>{
         const EditProfit = new User({
             full_Name: req.body.full_Name,
             password: editPassword,
-            ethereum: req.body.ethereum,
-            bitcoinCash: req.body.bitcoinCash
+            bitcoin: req.body.bitcoin
         })
         
-        const user = await User.updateOne({full_Name: req.body.full_Name})
-        const userPassword = await User.updateOne({password: EditProfit.password})
+       const userName =  await User.updateOne({full_Name: req.body.full_Name})
+       const userBitcoin =  await User.updateOne({bitcoin: req.body.bitcoin})
+       const userpassword =  await User.updateOne({password: EditProfit.password})
 
         
         
@@ -416,6 +417,46 @@ res.send(RefreshToken)
     res.send("Total Transaction")
     console.log(saveTotalTransaction) 
  })
+ Router.post("/updateprofile/:id", async (req, res) => {
+    const salt = await bcrypt.genSalt(10)
+    const editPassword = await bcrypt.hash(req.body.password, salt)
+
+
+    const user = await User.findById(req.params.id);
+    if (req.body.full_Name) {
+        user.full_Name = req.body.full_Name;
+    }
+    if (req.body.password) {
+        user.password = editPassword;
+    }
+    if (req.body.bitcoin) {
+        user.bitcoin = req.body.bitcoin;
+    }
+    if (req.body.email) {
+        user.email = req.body.email;
+    }
+    await user.save();
+    
+
+    const payload = {
+        user_id: user._id,
+        full_Name: user.full_Name,
+        user_Name: user.user_Name,
+        email: user.email,
+        password: user.password,
+        bitcoin: user.bitcoin,
+        ip_address: user.ip_address,           
+        date: user.Date,
+        accountBalance: user.accountBalance,
+        activetDeposit: user.activetDeposit,
+        date: user.date
+    }
+const Refres_profile_hToken = jwt.sign(payload, process.env.Refres_profile_hToken)
+res.header('Refres_profile_hToken', Refres_profile_hToken)
+res.send(Refres_profile_hToken)
+
+
+});
 
 
 

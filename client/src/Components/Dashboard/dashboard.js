@@ -17,12 +17,17 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            url: ''
+            user_id: ''
          }
          this.LogoutNow = this.LogoutNow.bind(this)
     }
     
     componentDidMount(){
+        const user_id =  sessionStorage.getItem('user_id')
+
+        this.setState({
+            user_id,
+        })
 
         const RefreshToken = sessionStorage.getItem('RefreshToken')
         setTimeout(()=>{
@@ -47,7 +52,7 @@ class Dashboard extends Component {
                      <DropdownButton className='dashboard_bot_drop' id="dropdown-item-button" title="MY DASHBOARD">
                         <Dropdown.Item  href='/dashboard/account'>ACCOUNT</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/deposit'>DEPOSIT</Dropdown.Item>
-                        <Dropdown.Item  href='/dashboard/withdraw'>WITHDRAW</Dropdown.Item>
+                        <Dropdown.Item  href={`/dashboard/withdraw/${this.state.user_id}`}>WITHDRAW</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/transaction/total_transaction'>TRANSACTION</Dropdown.Item>
                         <Dropdown.Item  href='/dashboard/edit'>EDIT</Dropdown.Item>
                         <Dropdown.Item  href='/'  onClick={this.LogoutNow}>SIGN-OUT</Dropdown.Item>
@@ -57,7 +62,7 @@ class Dashboard extends Component {
                     <ul className='dashboard_a'>
                         <li ><a href='/dashboard/account' >ACCOUNT</a></li>
                         <li><a href='/dashboard/deposit'>DEPOSIT</a></li>
-                        <li><a href='/dashboard/withdraw'>WITHDRAW</a></li>
+                        <li><a href={`/dashboard/withdraw/${this.state.user_id}`}>WITHDRAW</a></li>
                         <li><a href='/dashboard/transaction/total_transaction'>TRANSACTION</a></li>
                         <li><a href={`/dashboard/edit`}>EDIT</a></li>
                         <li><a href=''>SIGN-OUT</a></li>

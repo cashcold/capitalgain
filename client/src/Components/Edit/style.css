@@ -36,7 +36,14 @@
     width: 80%;
     margin: 0 auto;
     height: 40px;
+    background-color: black;
+    color: white;
 }
+.edit__main ::placeholder{
+    background-color: black;
+    color: white; 
+}
+
 .update_h5{
   padding: 0.7em 0em;
   background-color: red;

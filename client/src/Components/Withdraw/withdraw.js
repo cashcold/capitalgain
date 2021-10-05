@@ -19,6 +19,7 @@ class WithdrawMain extends Component {
             accountBalance: '',
             bitcoin: '',
             activetDeposit: '',
+            walletAddress: '',
             withdraw_date: ''
          }
 
@@ -66,15 +67,8 @@ class WithdrawMain extends Component {
         
     }
 
-
-
-
-
     componentDidMount(){
         
-    
-      
-
         const user_id =  sessionStorage.getItem('user_id')
         const user_Name =  sessionStorage.getItem('user_Name')
         const full_Name =  sessionStorage.getItem('full_Name')
@@ -90,7 +84,7 @@ class WithdrawMain extends Component {
             bitcoin,
             user_id,
             withdraw_date,
-            activetDeposit
+            activetDeposit,
         })
 
 
@@ -165,7 +159,7 @@ class WithdrawMain extends Component {
                             <h4>wallet address</h4>
                         </div>
                         <div className="wallet__id">
-                            <h4>14VoBZY3Pap6NUeTxNttspyGHBx92d1wAh</h4>
+                            <h4>{this.state.bitcoin}</h4>
                         </div>
                        
                     </section>
