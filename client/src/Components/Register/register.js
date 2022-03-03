@@ -126,10 +126,10 @@ class RegisterUser extends Component {
         return ( 
             <div className='register'>
              <ToastContainer/>
-                <h1  className='registerH1'>CREATE AN ACCOUNT</h1> 
+                <h1  className='registerH1'> CREATE AN ACCOUNT</h1> 
                 <div className="allRegister">
                     <div className='registerNow'>
-                        <h1>PERSONAL <span>INFORMATION</span></h1>
+                        <h1>PERSONAL <span> INFORMATION</span></h1>
                         <div className='formMain'>
                             <form>
                                 <table className='formTable'>
