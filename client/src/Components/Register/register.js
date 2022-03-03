@@ -90,6 +90,14 @@ class RegisterUser extends Component {
             toast.warn('password do not match')
             return false
         }
+        if(SaveNewUser.question.length < 1){
+            toast.warn('Please Create Qustion')
+            return false
+        }
+        if(SaveNewUser.question__ans.length < 1){
+            toast.warn('Please Provide Secret Answer')
+            return false
+        }
 
         if(!SaveNewUser.full_Name || !SaveNewUser.user_Name || !SaveNewUser.password || !SaveNewUser.email){
         toast.error('Please Fill All Field')

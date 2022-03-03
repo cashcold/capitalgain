@@ -29,6 +29,7 @@ p{
 body{
     text-align: center;
     color: white;
+    
    
     /* background-position: 20%;
     background-image: linear-gradient(rgba(2, 2, 16, 0.515), rgba(3, 21, 44, 0.364)),
@@ -46,10 +47,10 @@ h2,h3,h4,h5{
     font-family: 'Rubik', sans-serif;
     font-family: 'Sarabun', sans-serif;
 }
-
+/* 
 .mainApp{
     margin-bottom: 900%
-}
+} */
 .google__id{
     widows: 30%;
     text-align: left
